@@ -253,7 +253,7 @@ body {
 .products.one .big-image {
     position: relative;
     margin-bottom: 1em;
-    width: 544;
+    width: 544px;
 }
 .products.one :where(.big-image, .small-image) img {
     object-fit: cover;
@@ -261,9 +261,9 @@ body {
     height: var(--percent100);
     display: block;
 }
- .products.one .small-image {
+ /* .products.one .small-image {
     width: 150px;
-} 
+}  */
 .products.one .thumbnail-show {
     position: relative;
     width: 130px;
