@@ -1,0 +1,409 @@
+
+                                /* fonts */
+:root {
+    --primary-color: #ff6b6d;
+    --secondary-color: #794afa;
+    --secondary-darc-color: #453c5c;
+
+    --white-color: #ffffff;
+    --light-bg-color: #f2f3f5;
+    --light-text-color: #7c899a;
+    --darc-color: #0a021c;
+
+    --font-small:13px;
+    --font-smaller: 11px;
+
+    --percent100: 100%;
+    --percent50: 50%;
+
+    --te3: 300;
+    --te5: 500;
+    --te6: 600;
+    --tw7: 700;
+    --tw8: 800;
+
+    --trans-background-color: background-color .3s, color .3s;
+    --trans-background: background-color .3s;
+    --trans-color: color .3s
+}
+*,::before,::after {
+    box-sizing: border-box;
+}
+* {
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    --webkit-tap-highlight-color: transparent;
+    color: #fff;
+}
+img {
+    max-width: var(--percent100);
+    vertical-align: middle;
+}
+                            /* REUSABLE SELECTOR */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 0.938em;
+}
+body {
+    background-color: rgb(20, 14, 14);
+}
+
+                                   /* BREND  */
+.navbar {
+    background-color: rgb(31, 28, 28);
+    padding-top: 10px;
+}
+.navbar-dark .navbar-brend{
+    color: aliceblue;
+}
+.navbar-dark .navbar-brend:hover {
+    color: antiquewhite;
+}
+.navbar-brend {
+    justify-content: center;
+    font-family: 'Post No Bills Jaffna';
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    width: auto;
+    text-decoration: none;
+}
+
+                             /* ОБЩИЙ КОРЗИНА ТОВАРА */
+
+.header .right {
+    position: relative;
+    margin-left: auto;
+}
+.header .right .icon-large {
+    position: relative;
+}
+.header .right .fly-item {
+    top: 0;
+    right: 16px;
+    width: 16px;
+    background-color: var(--secondary-dark-color);
+    border-radius: var(--percent50);
+}
+.fly-item {
+    color: #fff;
+}
+.fly-item:hover {
+    color: green;
+}
+
+
+/* .navbar-tovar {
+    display: inline;
+    color: #fff;
+}
+.navbar-tovar:hover {
+    color: burlywood;
+} */
+
+
+
+                                   /* ШАПКА САЙТА */
+#hero {
+    max-width: 100%;
+    overflow: 100%;
+    height: 100vh;
+    background: url(./images/IMG_0906.JPG);
+    background-size: cover;
+    position: relative;
+    object-fit: scale-down;
+    margin: 0px 0 0px 0px;
+    text-decoration: 4px underline;
+}
+#hero::before {
+    content: "";
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#hero .container {
+    position: relative;
+    padding-top: 75px;
+    margin: 0 0 0 15px;
+}
+.border-block {
+    width: auto;
+    border: 3px solid #fff;
+    background: rgba(0, 0, 0, .3);
+    padding-top: 40px;
+
+}
+#hero h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 64px;
+    color: #fff;
+    font-family: 'Post No Bills Jaffna';
+    border-bottom: 3px solid;
+}
+ h2 {
+    padding-top: 30px;
+    font-family: 'Post No Bills Jaffna';
+    color: #fff;
+}
+
+                                 /* КОНТЕЙНЕР 1  ТОВАР 1 */
+.mt-4 {        
+    margin-top: 0.5rem!important
+}
+.about {
+    margin:  0px 0 90px 0px;
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+}
+.text {
+    position: relative;
+    font-family: 'Post No Bills Jaffna';
+    color: #fff;
+    text-align: center;
+}
+.conta {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.row {
+    padding: 13px 15px;
+    top: 50px;
+    width: auto;
+    height: auto;
+    display: inline-block;  
+    margin: 20px 0px 0px 0px;
+ }
+.flex-box {
+    overflow: hidden;
+    display: inline;
+}
+                                   /* КОНТЕЙНЕР IMG */
+                                   /* img slider */
+.products:where(.image, .thumbnail) img {
+    transition: transform .3s;
+}
+.products:where(.image, .thumbnail):hover img {
+    transform: scale(1.1);
+}
+.product .info {
+    transition: var(--trens-background-color), opacity .3s;
+}
+.products .item :hover .info {
+    opacity: 1;
+}
+.card-image {
+    margin-bottom: 30px;
+    position: relative;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 200px;
+    width: 200px;
+    box-shadow: 0 0 10px 6px #3f4146;
+} 
+.img-fluid{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+
+                             /* page single HTML */
+                             /* b. breadcrumb */
+.breadcrumb {
+    font-size: var(--font-small);
+    margin-bottom: 2em;
+}
+.breadcrumb li:not(:last-child)::after {
+    content: "/";
+    padding: 0 0.35em;
+}
+.breadcrumb li:last-child {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--light-text-color);
+}
+.flexitem {
+    display: contents;
+}
+
+ 
+                                    /* page single 
+                                        c Product detalis */
+ .products.one .item {
+    flex-direction: column;
+}   
+.products.one :where(.big-image, .small-image) {
+    overflow: hidden;
+}
+.products.one .big-image {
+    position: relative;
+    margin-bottom: 1em;
+    width: 544;
+}
+.products.one :where(.big-image, .small-image) img {
+    object-fit: cover;
+    width: var(--percent100);
+    height: var(--percent100);
+    display: block;
+}
+ .products.one .small-image {
+    width: 150px;
+} 
+.products.one .thumbnail-show {
+    position: relative;
+    width: 130px;
+    height: 110px;
+    overflow: hidden;
+    margin: 0 2em 2em 0;
+} 
+.products :is(.swiper-button-next, .swiper-button-prev) {
+    outline: 0;
+    color: var(--secondary-dark-color);
+    transition: var(--trans-background), transform .3s;
+}
+.products .big-image:hover .swiper-button-next {
+    transform: translateX(10px);
+}
+.products .big-image:hover .swiper-button-prev {
+    transform: translateX(-10px);
+}
+.products :is(.swiper-button-next, .swiper-button-prev)::after {
+    font-size: 1.5em;
+}
+.products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
+    background-color: var(--light-bg-color);
+}
+
+
+                               /* текст под товаром */
+.products a h3 {
+    font-family: 'Redik';
+    font-size: 21px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.products a h3:hover {
+    text-decoration: underline;
+    color:darksalmon;
+}
+.products .item-text a { 
+    color: black;
+}
+
+
+.info-price {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+                                      /* ЦЕНА */
+.products .info-price .price {
+    font-size: calc(0.4em + 1vw);
+    font-family: 'Redik';
+    color: #fff;
+}
+                                      /* КОРЗИНА */
+.add-to-cart {
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(20, 14, 14);
+    color: #fff;
+    border-radius: 10px;
+}
+.add-to-cart:hover {
+    color: burlywood;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 481px) {
+    .products.main .item {
+        flex: 0 0 50%;
+    }
+    /* page single */
+    .products.one .big-image {
+        margin-bottom: 2em;
+    }
+    .products.one .image-show {
+        height: 680px;
+    }
+    .products.one .thumbnail-show {
+        height: 160px;
+    }
+}
+
+@media screen and(min-width: 768px) {
+    .products .price .curent {
+        font-size: 1.25em;
+    }
+    .products.mini, 
+    .banner .row,
+    .widgets .row {
+        flex:0 0 50%;
+    } 
+    .products.main .item {
+        flex: 0 0 33.3333%;
+    }
+    .products.one .row {
+        flex: 0 0 50%;
+        width: 50%;
+    }
+}
+
+
+
+@media screen and(min-width: 992px) {
+    .container {
+        padding: 0 2em;
+    }
+
+    /* slider */
+    .slider > div > .wrapper {
+        width: calc(100% - (300px + 2em));
+        margin-left: auto;
+    }
+    .products.big .media {
+        max-height: 373px;
+    }
+
+    .products.main .item 
+    .widgets .row {
+        flex: 0 0 25%;
+    }
+}
