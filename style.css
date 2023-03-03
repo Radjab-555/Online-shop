@@ -246,9 +246,12 @@ body {
                                         c Product detalis */
  .products.one .item {
     flex-direction: column;
+    max-width: 100%;
+    width: auto;
 }   
 .products.one :where(.big-image, .small-image) {
     overflow: hidden;
+    display: flex;
 }
 .products.one .big-image {
     position: relative;
@@ -261,9 +264,6 @@ body {
     height: var(--percent100);
     display: block;
 }
- /* .products.one .small-image {
-    width: 150px;
-}  */
 .products.one .thumbnail-show {
     position: relative;
     width: 130px;
@@ -273,7 +273,8 @@ body {
 } 
 .products :is(.swiper-button-next, .swiper-button-prev) {
     outline: 0;
-    color: var(--secondary-dark-color);
+    /* color: var(--secondary-dark-color); */
+    color: #794afa;
     transition: var(--trans-background), transform .3s;
 }
 .products .big-image:hover .swiper-button-next {
@@ -283,11 +284,17 @@ body {
     transform: translateX(-10px);
 }
 .products :is(.swiper-button-next, .swiper-button-prev)::after {
-    font-size: 1.5em;
+    font-size: 3.5em;
 }
 .products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
-    background-color: var(--light-bg-color);
+    /* background-color: var(--light-bg-color); */
+    background-color: #f2f3f5;
 }
+/* .products.one .big-image {
+    height: 680px;
+    transform: matrix3d(544px 0 0);
+    transition-duration: 0ms;
+} */
 
 
                                /* текст под товаром */
@@ -320,10 +327,11 @@ body {
 }
                                       /* ЦЕНА */
 .products .info-price .price {
-    font-size: calc(0.4em + 1vw);
+    /* font-size: calc(0.4em + 1vw); */
     font-family: 'Redik';
     color: #fff;
 }
+
                                       /* КОРЗИНА */
 .add-to-cart {
     border: none;
@@ -353,6 +361,9 @@ body {
 
 
 @media screen and (min-width: 481px) {
+    /* .price {
+        font-size: 20px;
+    } */
     .products.main .item {
         flex: 0 0 50%;
     }
