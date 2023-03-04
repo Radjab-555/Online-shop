@@ -143,7 +143,7 @@ body {
 #hero h1 {
     margin: 0;
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 64px;
     color: #fff;
     font-family: 'Post No Bills Jaffna';
@@ -290,11 +290,106 @@ body {
     /* background-color: var(--light-bg-color); */
     background-color: #f2f3f5;
 }
-/* .products.one .big-image {
-    height: 680px;
-    transform: matrix3d(544px 0 0);
-    transition-duration: 0ms;
+
+
+       /* 08 PAGE SINGLE 
+       D PRODUCTDESCRIPTION */
+.products.one .title-text {
+    color: #fff;
+    font-size: 30px;
+}
+.products.one .price {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.products.one .price .current {
+    color: #fff;
+    font-size: 1.7em;
+}
+.products :where(.variant, .actions) circle {
+    display: block;
+    position: static;
+    top: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+.products .actions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2em;
+}
+.products .qty-control {
+    width: fit-content;
+    padding: 0.5em;
+    border: 1px solid var(--border-color);
+    margin: 0 2em 2em 0;
+}
+.products .actions :where(input, button) {
+    font-size: 1em;
+    outline: 0;
+    /* border: 0; */
+}
+.circle {
+    border-radius: 50px;
+    background-color: #3c3e41;
+    color: #fff;
+    font-size: 1.7em;
+    height: 30px;
+    width: 30px;
+}
+.circle:hover {
+    color: #000000;
+    background-color: darkorange;
+    transition: var(--trans-color);
+}
+.products .actions input {
+    width: 50px;
+    text-align: center;
+    background-color: #3c3e41;
+    color: #fff;
+    height: 30px;
+    border-radius: 40px;
+}
+.product .qty-control button::before {
+    background-color: transparent;
+}
+/* .products .circle .box-scils__text {
+    padding-top: 20px;
+    background-color: chocolate;
+    color: #fff;
 } */
+.products .actions .button-cart {
+    flex: 2;
+    min-width: 200px;
+}
+.products .actions .button-cart button {
+    width: var(--percent50);
+    cursor: pointer;
+}
+.primary-button {
+    border-radius: 20px;
+    background-color: #5a0305;
+    /* margin-left: 20px; */
+    cursor: pointer;
+    color: #f2f3f5;
+}
+.primary-button:hover {
+    color: #0d51fd;
+    background-color: #453c5c;
+    transition: var(--trans-background-color);
+}
+.wish-share a {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: var(--fw7);
+    margin: 0em 2em 0.5em 0;
+    transition: var(--trans-color);
+}
+
 
 
                                /* текст под товаром */
