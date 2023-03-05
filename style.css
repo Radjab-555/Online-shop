@@ -40,6 +40,7 @@ a {
     --webkit-tap-highlight-color: transparent;
     color: #fff;
 }
+
 img {
     max-width: var(--percent100);
     vertical-align: middle;
@@ -229,6 +230,7 @@ body {
 .breadcrumb li:not(:last-child)::after {
     content: "/";
     padding: 0 0.35em;
+    color: #fff;
 }
 .breadcrumb li:last-child {
     display: block;
@@ -242,7 +244,7 @@ body {
 }
 
  
-                                    /* page single 
+                                    /* 08 page single 
                                         c Product detalis */
  .products.one .item {
     flex-direction: column;
@@ -356,18 +358,14 @@ body {
 .product .qty-control button::before {
     background-color: transparent;
 }
-/* .products .circle .box-scils__text {
-    padding-top: 20px;
-    background-color: chocolate;
-    color: #fff;
-} */
 .products .actions .button-cart {
-    flex: 2;
-    min-width: 200px;
+    flex: 1;
+    min-width: 100px;
 }
 .products .actions .button-cart button {
     width: var(--percent50);
     cursor: pointer;
+    width: 150px;
 }
 .primary-button {
     border-radius: 20px;
@@ -390,6 +388,32 @@ body {
     transition: var(--trans-color);
 }
 
+                    /* 08 PAGE SIMBLE
+                        e Product review */
+.collapse:not(.show) {
+    display: inline;
+}
+.products .collapse .has-child > a {
+    position: relative;
+    font-weight: var(--fw7);
+    color:#fff;
+    text-transform: uppercase;
+    padding: 1em 1.5em;
+    border-top: 1px solid var(--border-color);
+}
+.products .collapse .has-child > a::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+}
+.icon-large__text {
+    display: block;
+    padding: 0 0 0 15px;
+}
+.box__text  {
+    margin: 20px 0 0 25px;
+    color: #fff;
+}
 
 
                                /* текст под товаром */
@@ -456,9 +480,7 @@ body {
 
 
 @media screen and (min-width: 481px) {
-    /* .price {
-        font-size: 20px;
-    } */
+    
     .products.main .item {
         flex: 0 0 50%;
     }
@@ -497,6 +519,12 @@ body {
 @media screen and(min-width: 992px) {
     .container {
         padding: 0 2em;
+    }
+    .has-child:hover ul {
+        display: block;
+    }
+    .has-child li a:hover {
+        text-decoration: underline;
     }
 
     /* slider */
