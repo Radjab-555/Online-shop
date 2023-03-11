@@ -332,7 +332,7 @@ body {
 .products .actions :where(input, button) {
     font-size: 1em;
     outline: 0;
-    /* border: 0; */
+    border: 0;
 }
 .circle {
     border-radius: 50px;
@@ -414,6 +414,139 @@ body {
     margin: 20px 0 0 25px;
     color: #fff;
 }
+
+                       /* 08 PAGE SINGLE 
+                         E  Product Review */
+
+.icon-small__text {
+    ma: 30px;
+    color: #f2f3f5;
+    font-size: 1em;
+}
+.products .reviews h4 {
+    font-size: 2em;
+    color: rgb(156, 156, 167);
+    padding-top: 1em;
+    margin: 1em 0 0.5em;
+    border: 1px solid var(--border-colorbord);
+    gap: 1em;
+    align-items: flex-start;
+}
+.products .review-block {
+    color: initial;
+}  
+.secondary-button {
+    background-color: #5a0305;
+    cursor: pointer;
+    color: #f2f3f5;
+    padding: 0 0 5px 0;
+}
+.secondary-button:hover {
+    color: #f2f3f5;
+    background-color: #3c3e41;
+    transition: var(--trans-background-color);
+}
+.products .review-block-head > a {
+    display: block;
+    font-size: 1.5em;
+    width: 200px;
+    margin-top: 1em;
+    text-align: center;
+    border-radius: 20px;
+}   
+.products .review-block-head .rate-sum {
+    position: relative;
+    font-size: 4em;
+    font-weight: var(--fw7);
+    padding-right: 0.5em;
+    color: #fff;
+}
+.products .review-block-head .rate-sum::before {
+    content: '';
+    width: 2px;
+    height: 50px;
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 100px;
+    transform: rotate(22deg);
+    background-color:#7c899a;
+}
+.review-block-body .item {
+    gap: 1em;
+    padding-bottom: 2.5em;
+    margin-top: 3.5em;
+}
+.rate-sum__text {
+    color: #737578;
+}
+
+
+
+                                /* 08 PAGE SINGLE 
+                                f  Product Review form */
+.review-form .rating {
+    flex-wrap: wrap;
+    display: flex;
+} 
+.review-form p {
+    font-size: 1.25em;
+    margin-right: 1em;
+    color: #fff;
+}
+.review-form .rate-this input {
+    display: none;
+}
+.review-form .rete-this label {
+    float: right;
+    font-size: 2em;
+    color: var(--secondary-darc-color);
+}
+.rate-this {
+    color: #f2f3f5; 
+ } 
+.rate-this > input:checked ~ label,
+.rate-this:not(:checked) > label:hover,
+.rate-this:not(:checked) > label:hover ~ label {
+    color: gold;
+} 
+.rate-this > input:checked + label,
+.rate-this > input:checked ~ label:hover,
+.rate-this > label:hover ~ input:checked ~ label,
+.rate-this > input:checked ~ label:hover ~ label {
+    color:goldenrod;
+}
+ .review-form form {
+    margin-top: 2.5em;
+ }                               
+form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+form :where(input,textarea)  {
+    line-height: 1;
+    padding: 0.3em;
+    border: 1px solid var(--border-color);
+    outline: 0;
+    border-radius: 15px;
+    max-width: 550px;
+}   
+.form label {
+    font-weight: var(--fw5);
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+.fsi-5 {
+    color: rgb(86, 82, 82);
+}
+.review-form .primary-button {
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    padding-top: 8px;
+}
+                           /* 09 PAGE SINGLE: SPECIAL OFFER */
 
 
                                /* текст под товаром */
@@ -512,6 +645,11 @@ body {
         flex: 0 0 50%;
         width: 50%;
     }
+    .products.one .is_sticky,
+    .is_sticky {
+        position: sticky;
+        top: 2em;
+    }
 }
 
 
@@ -539,5 +677,8 @@ body {
     .products.main .item 
     .widgets .row {
         flex: 0 0 25%;
+    }
+    .products.one .flexwrap > .row:last-child > .item {
+        padding-left: 2em;
     }
 }
