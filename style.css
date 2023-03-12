@@ -419,7 +419,7 @@ body {
                          E  Product Review */
 
 .icon-small__text {
-    ma: 30px;
+    /* ma: 30px; */
     color: #f2f3f5;
     font-size: 1em;
 }
