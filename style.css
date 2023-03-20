@@ -183,11 +183,11 @@ body {
 }
 .row {
     padding: 13px 15px;
-    top: 50px;
+    /* top: 50px; */
     width: auto;
     height: auto;
     display: inline-block;  
-    margin: 20px 0px 0px 0px;
+    /* margin: 20px 0px 0px 0px; */
  }
 .flex-box {
     overflow: hidden;
@@ -622,7 +622,29 @@ form :where(input,textarea)  {
     color: burlywood;
 }
 
-
+/* footer */
+/* способ связи */
+.footer_connection {
+    display: inline;
+}
+.bi_email {
+    color: aliceblue;
+}
+.bi_email:hover {
+    color: #36456b;
+}
+.bi_instagram {
+    color: #e2e7ef;
+}
+.bi_instagram:hover {
+    color: rgb(210, 46, 46);
+}
+.bi_watscap {
+    color: #e2e7ef;
+}
+.bi_watscap:hover {
+    color: #3d6bde;
+}
 
 
 
