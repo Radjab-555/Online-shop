@@ -85,6 +85,9 @@ body {
 .header .right .icon-large {
     position: relative;
 }
+.right .cart-head {
+    color: #e2e7ef;
+} 
 .header .right .fly-item {
     top: 0;
     right: 16px;
@@ -98,6 +101,7 @@ body {
 .fly-item:hover {
     color: green;
 }
+
 
 
 /* .navbar-tovar {
@@ -547,6 +551,25 @@ form :where(input,textarea)  {
 }
                            /* 09 PAGE SINGLE: SPECIAL OFFER */
 
+
+
+                           /* CART МАГАЗИН В HEADER */
+
+/* .image-cover {
+    position: relative;
+} */
+.item-content {
+    position: relative;
+    float: right;
+} 
+.head_text {
+    /* text-align: center; */
+    /* float: right; */
+}   
+.cena {
+    color: #f2f3f5;
+}  
+                  
 
                                /* текст под товаром */
 .products a h3 {
