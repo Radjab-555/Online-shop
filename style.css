@@ -563,10 +563,10 @@ form :where(input,textarea)  {
     position: relative;
     float: right;
 } 
-.head_text {
-    /* text-align: center; */
-    /* float: right; */
-}   
+/* .head_text {
+    text-align: center; */
+    /* float: right;
+}    */
 .cena {
     color: #f2f3f5;
 }  
