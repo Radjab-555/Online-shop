@@ -216,20 +216,24 @@
                                                                                     <label for="star1"><i class="ri-star-fill"></i></label>
                                                                                 </div>
                                                                             </div>
+                                                                            <div id="comment-field"></div>
                                                                             <form action="">
-                                                                                <p>
-                                                                                    <label class="fs-5">Имя</label>
-                                                                                    <input type="text">
+                                                                                <p class="form-group">
+                                                                                    <label class="comment-name">Имя</label>
+                                                                                    <input type="name" class="form-control" id="comment-name" placeholder="Your name">
                                                                                 </p>
-                                                                                <p>
+                                                                                <!-- <p>
                                                                                     <label class="fs-5">Резюме</label>
                                                                                     <input type="text">
+                                                                                </p> -->
+                                                                                <p class="form-group">
+                                                                                    <label class="comment-body">Коментарии</label>
+                                                                                    <input type="name" class="form-control" id="comment-body" placeholder="Your comment">
+                                                                                    <!-- <textarea cols="30" rows="10"></textarea> -->
                                                                                 </p>
-                                                                                <p>
-                                                                                    <label class="fs-5">Обзор</label>
-                                                                                    <textarea cols="30" rows="10"></textarea>
+                                                                                <p class="form-group">
+                                                                                    <button type="submit" id="comment-add" class="primary-button">Отправить отзыв</button>
                                                                                 </p>
-                                                                                <p><a href="#" class="primary-button">Отправить отзыв</a></p>
                                                                             </form>
                                                                         </div>
                                                                     </div>
@@ -248,7 +252,7 @@
             </div>
         </div>
     </main>
-    <footer>
+    <footer class="footer">
         <div class="container">
            <div class="footer_connection ">
                 <a href="alibekov.sh.r@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="20" fill="currentColor" class="bi_email bi-envelope-at" viewBox="0 0 16 16">

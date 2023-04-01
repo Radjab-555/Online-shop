@@ -548,7 +548,9 @@ form :where(input,textarea)  {
     width: 200px;
     height: 50px;
     text-align: center;
-    padding-top: 8px;
+}
+.form-control {
+    border-radius: 30px;
 }
                            /* 09 PAGE SINGLE: SPECIAL OFFER */
 
@@ -556,17 +558,11 @@ form :where(input,textarea)  {
 
                            /* CART МАГАЗИН В HEADER */
 
-/* .image-cover {
-    position: relative;
-} */
+
 .item-content {
     position: relative;
     float: right;
 } 
-/* .head_text {
-    text-align: center; */
-    /* float: right;
-}    */
 .cena {
     color: #f2f3f5;
 }  
@@ -623,8 +619,42 @@ form :where(input,textarea)  {
     color: burlywood;
 }
 
+/* коментарии клиента */
+#comment-field {
+    width: 550px;
+    height: auto;
+}
+.tetxt-right-text {
+    width: 200px;
+    font-size: 20px;
+    color: #000000;
+}
+.alert-primary-text {
+    width: 500px;
+    height: auto;
+    color: #000000;
+    background-color: #696f7a;
+    border: 1px solid #696f7a;
+    border-radius: 30px;
+    padding: .375rem 0.75rem;;
+}
+.alert-success-text  {
+    color: #000000;
+    background-color: #3f4146;
+    height: auto;
+    width: auto;
+    max-width: 500px;
+    background-color: #696f7a;
+    border: 1px solid #696f7a;
+    border-radius: 30px;
+    padding: .375rem 0.75rem;;
+}
+
 /* footer */
 /* способ связи */
+.footer {
+    margin: 50px 0 50px 0 ;
+}
 .footer_connection {
     display: inline;
 }
