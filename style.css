@@ -494,7 +494,7 @@ body {
     display: flex;
 } 
 .review-form p {
-    font-size: 1.25em;
+    /* font-size: 1.25em; */
     margin-right: 1em;
     color: #fff;
 }
@@ -626,29 +626,32 @@ form :where(input,textarea)  {
 }
 .tetxt-right-text {
     width: 200px;
-    font-size: 20px;
-    color: #000000;
+    font-size: 12px;
 }
 .alert-primary-text {
-    width: 500px;
+    width: 550px;
     height: auto;
-    color: #000000;
     background-color: #696f7a;
     border: 1px solid #696f7a;
     border-radius: 30px;
     padding: .375rem 0.75rem;;
 }
 .alert-success-text  {
-    color: #000000;
-    background-color: #3f4146;
     height: auto;
-    width: auto;
-    max-width: 500px;
+    min-height: 70px;
+    max-height: 400px;
+    width: 550px;
     background-color: #696f7a;
     border: 1px solid #696f7a;
     border-radius: 30px;
     padding: .375rem 0.75rem;;
 }
+.form-control-textarea {
+    height: 70px;
+    min-height: 70px;
+    max-height: 400px;
+}
+
 
 /* footer */
 /* способ связи */

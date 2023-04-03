@@ -75,7 +75,7 @@ function showComments() {
     comments.forEach(function(item) {
         out += `<p class="tetxt-right-text small"><em>${timeConverter(item.time)}</em></p>`; 
         out += `<p class="alert alert-primary-text">${item.name}</p>`; 
-        out += `<p class="alert alert-success-text">${item.body}</p>`;
+        out += `<textarea class="alert alert-success-text">${item.body}</textarea>`;
       }); 
       commentField.innerHTML = out;
 }
