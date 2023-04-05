@@ -90,8 +90,8 @@ body {
 } 
 .header .right .fly-item {
     top: 0;
-    right: 16px;
-    width: 16px;
+    /* right: 16px;
+    width: 16px; */
     background-color: var(--secondary-dark-color);
     border-radius: var(--percent50);
 }
@@ -102,15 +102,17 @@ body {
     color: green;
 }
 
-
-
-/* .navbar-tovar {
-    display: inline;
-    color: #fff;
+/* home  */
+.flexitem li {
+    display: flex;
 }
-.navbar-tovar:hover {
-    color: burlywood;
-} */
+.bi-hover {
+    color: #ffffff;
+    width: 60px;
+}
+.bi-hover:hover {
+    color: silver;
+}
 
 
 
