@@ -44,6 +44,15 @@ var productBig = new Swiper ('.big-image', {
     }
 });
 
+// товар number
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains("increase")) {
+      ++e.target.parentElement.querySelector("input").value;
+    } else if (e.target.classList.contains("decrease")) {
+      --e.target.parentElement.querySelector("input").value;
+    }
+  })
+
 
 // управления с комментариями
 let comments = [];

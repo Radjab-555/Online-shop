@@ -196,6 +196,7 @@ body {
     overflow: hidden;
     display: inline;
 }
+
                                    /* КОНТЕЙНЕР IMG */
                                    /* img slider */
 .products:where(.image, .thumbnail) img {
@@ -339,7 +340,19 @@ body {
 .products .actions :where(input, button) {
     font-size: 1em;
     outline: 0;
-    border: 0;
+    border: 0px solid;
+    height: 30px;
+    border-radius: 100px;
+    width: 30px;
+    text-align: center;
+}
+.decrease {
+    background-color:#3c3e41;
+    color: #e2e7ef;
+}
+.increase {
+    background-color:#3c3e41;
+    color: #e2e7ef;
 }
 .circle {
     border-radius: 50px;
@@ -406,19 +419,15 @@ body {
     color:#fff;
     text-transform: uppercase;
     padding: 1em 1.5em;
+    top: 30px;
     border-top: 1px solid var(--border-color);
-}
-.products .collapse .has-child > a::before {
-    content: '+';
-    position: absolute;
-    left: 0;
 }
 .icon-large__text {
     display: block;
     padding: 0 0 0 15px;
 }
 .box__text  {
-    margin: 20px 0 0 25px;
+    margin: 40px 0 0 40px;
     color: #fff;
 }
 
@@ -647,6 +656,7 @@ form :where(input,textarea)  {
     border: 1px solid #696f7a;
     border-radius: 30px;
     padding: .375rem 0.75rem;;
+    color: #e2e7ef;
 }
 .form-control-textarea {
     height: 70px;
