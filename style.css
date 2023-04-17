@@ -51,9 +51,52 @@ img {
     margin: 0 auto;
     padding: 0 0.938em;
 }
+.column {
+    margin-left: -0.938em;
+    margin-right: 0.938em;
+}
+.column .row {
+    padding: 0 0.938em;
+}
+.flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flexitem {
+    display: flex;
+    align-items: center;
+}
+.flexcol {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
 body {
     background-color: rgb(20, 14, 14);
 }
+/* header */
+/* .header li {
+    position: relative;
+}
+.header ul li {
+    position: absolute;
+    left: -1em;
+    line-height: 2em;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    z-index: 1;
+    display: none;
+} */
+
+
+
+
+
 
                                    /* BREND  */
 .navbar {
@@ -76,31 +119,7 @@ body {
     text-decoration: none;
 }
 
-                             /* ОБЩИЙ КОРЗИНА ТОВАРА */
-
-.header .right {
-    position: relative;
-    margin-left: auto;
-}
-.header .right .icon-large {
-    position: relative;
-}
-.right .cart-head {
-    color: #e2e7ef;
-} 
-.header .right .fly-item {
-    top: 0;
-    background-color: var(--secondary-dark-color);
-    border-radius: var(--percent50);
-}
-.fly-item {
-    color: #fff;
-}
-.fly-item:hover {
-    color: green;
-}
-
-/* home  */
+/* icon home  */
 .flexitem li {
     display: flex;
 }
@@ -113,13 +132,195 @@ body {
 }
 
 
+                             /* ОБЩАЯ КОРЗИНА ТОВАРА */
+
+.header .right {
+    position: relative;
+    margin-left: auto;
+}
+.header .right .icon-large {
+    position: relative;
+}
+.bi-corsina {
+    color: #fff;
+}
+.bi-corsina:hover {
+    color: green;
+}
+.icon-large {
+    font-size: 1.75em;
+}
+.icon-large .item-number {
+    font-size: 16px;
+    padding: 0;
+}
+
+/* HEADER-NAV */
+nav .fly-item,
+.header-nav .mini-cart .price .fly-item {
+    top: 50%;
+    margin-top: -24px;
+    width: 30px;
+    border-radius: 3px;
+    /* right: -32px; */
+    /* background-color: var(--primary-color); */
+}
+
+.fly-item {
+    position: absolute;
+    height: 16px;
+    font-weight: var(--font-smaller);
+    padding: 4px;
+    text-align: center;
+    line-height: 32px;
+    color: var(--white-color);
+    top: 0;
+}
+.header-nav .right {
+    position: relative;
+    margin-left: auto;
+    display: contents;
+}
+.header-nav .right .icon-large {
+    position: relative;
+}
+.header-nav .right .fly-item {
+    top: -14;
+    right: 5px;
+    width: 16px;
+    background-color: var(--secondary-darc-color);
+    border-radius: var(--percent50);
+}
+
+
+/* MINI CART */
+
+.mini-cart {
+    position: absolute;
+    width: 350px;
+    top: 100%;
+    background-color:#000000;
+    z-index: 1000;
+    box-shadow: rgba(3, 3, 3, 0.719) 0 10PX 50px;
+    right: 3px;
+    height: auto;
+    visibility: hidden;
+    opacity: 0;
+}
+.iscart:hover .mini-cart {
+    visibility: visible;
+    opacity: 1;
+}
+.mini-cart ul :where(li, .price) {
+    position: relative;
+}
+.mini-cart .content {
+    width: var(--percent100);
+    height: var(--percent100);
+    touch-action: auto;
+    padding: 1.5em;
+}
+.mini-cart .cart-head {
+    font-size: 1.5em;
+    font-weight: var(--fw5);
+    color: var(--light-text-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--border-color);
+}
+.mini-cart .cart-boby {
+    padding: 0 1.5em;
+    margin: 0 -1.5em;
+    max-height: 450px;
+    overflow: auto;
+}
+/* .mini-cart .thumbnail {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-right: 1em;
+} */
+
+
+.white {
+    color: #fff;
+    margin-left: 10px;
+}
+.corsina-img {
+    height: 85px;
+    width: 100px;
+    padding: 3px;
+}
+.item-content {
+    position: relative;
+    float: right;
+    font-size: 13px;
+    width: 251px;
+} 
+.bi-x {
+    color: #e2e7ef;
+}
+
+
+/*  */
+.mini-cart .subtotal {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+    margin-bottom: 2em;
+    border-top: 1px solid #a2b2db;
+}
+.mini-cart .subtotal p:last-child {
+    font-size: 2em;
+}
+.mini-cart .actions a {
+    display: block;
+    width: var(--percent100);
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+
+.textp { 
+    color: var(--white-color);
+}
+.primary-button-cor {
+    border-radius: 20px;
+    background-color: #5a0305;
+    /* margin-left: 20px; */
+    cursor: pointer;
+    color: #f2f3f5;
+    padding: 8px 8px 8px 8px;
+}
+.primary-button-cor:hover {
+    color: #0d51fd;
+    background-color: #453c5c;
+    transition: var(--trans-background-color);
+}
+.secondary-button-cor {
+    border-radius: 20px;
+    background-color: #431515;
+    /* margin-left: 20px; */
+    cursor: pointer;
+    color: #f2f3f5;
+    padding: 8px 8px 8px 8px;
+}
+.secondary-button-cor:hover {
+    color: #0d51fd;
+    background-color: #453c5c;
+    transition: var(--trans-background-color);
+}
+
+
+
 
                                    /* ШАПКА САЙТА */
 #hero {
     max-width: 100%;
     overflow: 100%;
     height: 100vh;
-    background: url(./images/travel/10.JPG);
+    background: url(./images/travel/IMG_0906.JPG);
     background-size: cover;
     position: relative;
     object-fit: scale-down;
@@ -568,10 +769,7 @@ form :where(input,textarea)  {
                            /* CART МАГАЗИН В HEADER */
 
 
-.item-content {
-    position: relative;
-    float: right;
-} 
+
 .cena {
     color: #f2f3f5;
 }  
@@ -705,6 +903,9 @@ form :where(input,textarea)  {
     .products.main .item {
         flex: 0 0 50%;
     }
+    /* .header-nav .icon-large {
+        padding: 0;
+    } */
     /* page single */
     .products.one .big-image {
         margin-bottom: 2em;
@@ -745,6 +946,17 @@ form :where(input,textarea)  {
 @media screen and(min-width: 992px) {
     .container {
         padding: 0 2em;
+    }
+    /* .mobile-hide {
+        display: block;
+    } */
+    .header-nav {
+        padding: 0;
+        margin: 0;
+        border-bottom: 0;
+    }
+    .header-nav .right li > a {
+        margin-left: 1em;
     }
     .has-child:hover ul {
         display: block;
