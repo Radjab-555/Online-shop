@@ -125,7 +125,8 @@ body {
 }
 .bi-hover {
     color: #ffffff;
-    width: 60px;
+    /* width: 40px; */
+    margin-right: 20px;
 }
 .bi-hover:hover {
     color: silver;
@@ -134,6 +135,12 @@ body {
 
                              /* ОБЩАЯ КОРЗИНА ТОВАРА */
 
+.header-nav {
+    display: flex;
+}
+.corsina-header {
+    display: flex;
+}
 .header .right {
     position: relative;
     margin-left: auto;
@@ -147,8 +154,12 @@ body {
 .bi-corsina:hover {
     color: green;
 }
+.icon-large-a {
+    font-size: 1.75em;
+}
 .icon-large {
     font-size: 1.75em;
+    display: block;
 }
 .icon-large .item-number {
     font-size: 16px;
@@ -211,6 +222,9 @@ nav .fly-item,
     visibility: visible;
     opacity: 1;
 }
+:is(.mini-cart .products, .products-cart) .thumbnail img {
+    transform: none;
+}
 .mini-cart ul :where(li, .price) {
     position: relative;
 }
@@ -234,13 +248,13 @@ nav .fly-item,
     max-height: 450px;
     overflow: auto;
 }
-/* .mini-cart .thumbnail {
+:where(.mini-cart, .products.cart) .thumbnail {
     position: relative;
     width: 80px;
     height: 80px;
     flex-shrink: 0;
     margin-right: 1em;
-} */
+}
 
 
 .white {
@@ -263,7 +277,7 @@ nav .fly-item,
 }
 
 
-/*  */
+/*  ВНУТРИ В РАРЗИНЕ */
 .mini-cart .subtotal {
     display: flex;
     flex-direction: column;
@@ -280,7 +294,6 @@ nav .fly-item,
     text-align: center;
     margin-bottom: 1em;
 }
-
 
 .textp { 
     color: var(--white-color);
@@ -311,6 +324,70 @@ nav .fly-item,
     background-color: #453c5c;
     transition: var(--trans-background-color);
 }
+
+/* потом переместить в page cart */
+.pagle-title {
+    color: white;
+}
+
+b, strong {
+    font-weight: bolder;
+    /* margin-left: 100px; */
+}
+
+
+/* PAGE CART управление и хранение товаров */
+.products.cart form {
+    width: var(--percent100);
+}
+.products.cart table thead th {
+    vertical-align: middle;
+    /* background-color: var(--light-bg-color); */
+}
+.products.cart table :where(th, td) {
+    padding: 2em 1em;
+    text-align: center;
+    color: floralwhite;
+    padding: 11px 6px 7px 14px;
+}
+.products.cart table :where(th, td):first-child {
+    /* text-align: left; */
+    padding-left: 2em;
+}
+.products.cart table tbody td:first-child {
+    padding-left: 0;
+}
+/* .products.cart table td :where(.content, .qty-control, p) {
+    margin: 0;
+    padding: 0;
+} */
+.products.cart .qty-control :where(button, input) {
+    width: 32px;
+    height: 32px;
+    padding: 3.25px 0 4px;
+    text-align: center;
+    outline: 0;
+    border: 0;
+    background-color:#bbc5d6;
+    border-radius: 20px;
+}
+.products.cart .qty-control button {
+    cursor: pointer;
+}
+.products.cart table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    /* float: right; */
+}
+.line {
+    display: inline-block;
+    margin-top: 36px;
+}
+.strong-item {
+    padding: 0 0 0 0;
+}
+
+
+
 
 
 
@@ -767,14 +844,9 @@ form :where(input,textarea)  {
 
 
                            /* CART МАГАЗИН В HEADER */
-
-
-
 .cena {
     color: #f2f3f5;
 }  
-                  
-
                                /* текст под товаром */
 .products a h3 {
     font-family: 'Redik';
@@ -795,8 +867,6 @@ form :where(input,textarea)  {
 .products .item-text a { 
     color: black;
 }
-
-
 .info-price {
     display: flex;
     flex-flow: row nowrap;
@@ -895,17 +965,27 @@ form :where(input,textarea)  {
 
 
 
-
-
-
-@media screen and (min-width: 481px) {
-    
+@media (min-width: 355px ) and (max-width: 550px) {
+    .navbar-brend {
+        font-size: 25px;
+    }
+    /* .icon-large {
+        margin-right: 29px;
+    } */
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 80%;
+    }
+    .products.cart table tbody tr {
+        float: right;
+    }
+    .products.cart table :where(th, td) {
+        float: left;
+        margin: 0 0 0 0;
+    }
     .products.main .item {
         flex: 0 0 50%;
     }
-    /* .header-nav .icon-large {
-        padding: 0;
-    } */
     /* page single */
     .products.one .big-image {
         margin-bottom: 2em;
@@ -918,9 +998,69 @@ form :where(input,textarea)  {
     }
 }
 
-@media screen and(min-width: 768px) {
+
+/* @media (min-width: 481px) {
+    
+    .products.main .item {
+        flex: 0 0 50%;
+    } */
+    /* .header-nav .icon-large {
+        padding: 0;
+    } */
+    /* page single */
+    /* .products.one .big-image {
+        margin-bottom: 2em;
+    }
+    .products.one .image-show {
+        height: 680px;
+    }
+    .products.one .thumbnail-show {
+        height: 160px;
+    }
+} */
+
+@media (max-width: 639px) {
+    .icon-large {
+        margin-left: -32px;
+    }
+    .bi-hover {
+        margin-right: 115px;
+    }
+    #cart-table thead {
+       display: none; 
+    }
+    #cart-tabele tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        align-items: center;
+    }
+    #cart-tabele tbody tr td:first-child {
+        width: var(--percent100);
+        min-width: var(--percent100);
+        position: relative;
+    }
+    #cart-tabele tbody tr td:not(:first-child) {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: var(--percent100);
+    }
+    #cart-tabele tbody tr td:first-child {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
     .products .price .curent {
         font-size: 1.25em;
+    }
+    .icon-large {
+        margin-left: -32px;
+    }
+    .bi-hover {
+        margin-right: 115px;
     }
     .products.mini, 
     .banner .row,
@@ -932,20 +1072,33 @@ form :where(input,textarea)  {
     }
     .products.one .row {
         flex: 0 0 50%;
-        width: 50%;
+        /* width: 50%; */
     }
     .products.one .is_sticky,
     .is_sticky {
         position: sticky;
         top: 2em;
-    }
+    }  
 }
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 auto;
+        width: 70%;
+}
+}
+
 
 
 
 @media screen and(min-width: 992px) {
     .container {
         padding: 0 2em;
+    }
+    .icon-large {
+        margin-left: -32px;
+    }
+    .bi-hover {
+        margin-right: 115px;
     }
     /* .mobile-hide {
         display: block;
@@ -981,4 +1134,9 @@ form :where(input,textarea)  {
     .products.one .flexwrap > .row:last-child > .item {
         padding-left: 2em;
     }
+    .col-lg-10 {
+        flex: 0 0 auto;
+        width: 70%;
+        margin: 20px;
+}
 }

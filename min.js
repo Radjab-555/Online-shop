@@ -101,3 +101,8 @@ function timeConverter(UNIX_timestamp) {
     var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
     return time;
 }
+
+// shov cart on click
+const divtoShow = "mini-cart";
+const divPopup = document.querySelector(divtoShow);
+const divTrigger = document.querySelector(".cart-trigger");
