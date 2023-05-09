@@ -106,3 +106,11 @@ function timeConverter(UNIX_timestamp) {
 const divtoShow = "mini-cart";
 const divPopup = document.querySelector(divtoShow);
 const divTrigger = document.querySelector(".cart-trigger");
+
+
+const mainElement = document.documentElement;
+const mainElementWidth = mainElement.clientWidth;
+const mainElementHeight = mainElement.clientHeight;
+
+console.log(mainElementWidth);
+console.log(mainElementHeight);

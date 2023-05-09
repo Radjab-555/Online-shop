@@ -334,7 +334,7 @@ b, strong {
     font-weight: bolder;
     /* margin-left: 100px; */
 }
-
+                                                   1/59/10
 
 /* PAGE CART управление и хранение товаров */
 .products.cart form {
@@ -964,17 +964,19 @@ form :where(input,textarea)  {
 
 
 
-
-@media (min-width: 355px ) and (max-width: 550px) {
+@media (min-width: 310px ) and (max-width: 550px) {
+    .col-sm-4 {
+        width: 100%;
+        float: left;
+    }
+    #hero h1 {
+        font-size: 30px;
+    }
     .navbar-brend {
         font-size: 25px;
     }
-    /* .icon-large {
-        margin-right: 29px;
-    } */
-    .col-md-6 {
-        flex: 0 0 auto;
-        width: 80%;
+    .icon-large {
+        margin-right: 30px;
     }
     .products.cart table tbody tr {
         float: right;
@@ -999,33 +1001,28 @@ form :where(input,textarea)  {
 }
 
 
-/* @media (min-width: 481px) {
+@media (min-width: 481px) {
     
     .products.main .item {
         flex: 0 0 50%;
-    } */
-    /* .header-nav .icon-large {
+    } 
+     .header-nav .icon-large {
         padding: 0;
-    } */
-    /* page single */
-    /* .products.one .big-image {
-        margin-bottom: 2em;
     }
+    
+    /* page single */
+    .products.one .big-image {
+        margin-bottom: 2em;
+    } 
     .products.one .image-show {
         height: 680px;
     }
     .products.one .thumbnail-show {
         height: 160px;
     }
-} */
+}
 
 @media (max-width: 639px) {
-    .icon-large {
-        margin-left: -32px;
-    }
-    .bi-hover {
-        margin-right: 115px;
-    }
     #cart-table thead {
        display: none; 
     }
@@ -1051,16 +1048,10 @@ form :where(input,textarea)  {
         right: 0;
     }
 }
-
-@media (min-width: 768px) and (max-width: 991px) {
+/* and (max-width: 990px) */
+@media (min-width: 768px) {
     .products .price .curent {
         font-size: 1.25em;
-    }
-    .icon-large {
-        margin-left: -32px;
-    }
-    .bi-hover {
-        margin-right: 115px;
     }
     .products.mini, 
     .banner .row,
@@ -1079,30 +1070,26 @@ form :where(input,textarea)  {
         position: sticky;
         top: 2em;
     }  
-}
-@media (min-width: 768px) {
     .col-md-6 {
         flex: 0 0 auto;
-        width: 70%;
-}
-}
-
-
-
-
-@media screen and(min-width: 992px) {
-    .container {
-        padding: 0 2em;
+        width: 100%;
     }
-    .icon-large {
+}
+
+
+@media (min-width: 992px) {
+    /* .container {
+        padding: 0 2em;
+    } */
+    /* .icon-large {
         margin-left: -32px;
     }
     .bi-hover {
         margin-right: 115px;
-    }
-    /* .mobile-hide {
-        display: block;
     } */
+    .mobile-hide {
+        display: block;
+    }
     .header-nav {
         padding: 0;
         margin: 0;
@@ -1134,9 +1121,10 @@ form :where(input,textarea)  {
     .products.one .flexwrap > .row:last-child > .item {
         padding-left: 2em;
     }
+
     .col-lg-10 {
         flex: 0 0 auto;
-        width: 70%;
+        width: 990px;
         margin: 20px;
-}
+    }
 }
