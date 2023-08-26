@@ -102,15 +102,62 @@ function timeConverter(UNIX_timestamp) {
     return time;
 }
 
+
 // shov cart on click
-const divtoShow = "mini-cart";
-const divPopup = document.querySelector(divtoShow);
-const divTrigger = document.querySelector(".cart-trigger");
+// const divtoShow = "mini-cart";
+// const divPopup = document.querySelector(divtoShow);
+// const divTrigger = document.querySelector(".cart-trigger");
 
 
-const mainElement = document.documentElement;
-const mainElementWidth = mainElement.clientWidth;
-const mainElementHeight = mainElement.clientHeight;
+// const mainElement = document.documentElement;
+// const mainElementWidth = mainElement.clientWidth;
+// const mainElementHeight = mainElement.clientHeight;
 
-console.log(mainElementWidth);
-console.log(mainElementHeight);
+// console.log(mainElementWidth);
+// console.log(mainElementHeight);
+
+
+// PaintBrush.y = 50;
+// var button = document.createElement(".ri-close-line");
+// button.innerHTML = "Level 2";
+// button.id = "button-2";  
+// document.body.appendChild(button);
+// GameArena.clear();
+// GameArena.stop();
+// button.addEventListener ("click", function() {
+//   startGame2();
+//   document.getElementById("button-2").remove();
+// });
+
+
+
+// Каталог. Отображение товаров
+// Утилиты
+function toNum(str) {
+  const num = Number(str.replace(/ /g, ""));
+  return num;
+}
+
+function toCurrency(num) {
+  const format = new Intl.NumberFormat("ru-RU", {
+    style: "currency",
+    currency: "RUB",
+    minimumFractionDigits: 0,
+  }).format(num);
+  return format;
+}
+  
+// Считываем все элементы корзины:
+// const cardAddArr = Array.from(document.querySelectorAll(".add-to-cart"));
+// const cartNum = document.querySelector("#cart_num");
+// const cart = document.querySelector("#cart");
+
+// Считываем все элементы products:
+// const popup = document.querySelector(".products");
+// const popupClose = document.querySelector("#popup_close");
+// const body = document.body;
+// const popupContainer = document.querySelector("#popup_container");
+// const popupProductList = document.querySelector("#popup_product_list");
+// const popupCost = document.querySelector("#popup_cost");
+// const popupDiscount = document.querySelector("#popup_discount");
+// const popupCostDiscount = document.querySelector("#popup_cost_discount");

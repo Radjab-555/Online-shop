@@ -266,7 +266,7 @@ nav .fly-item,
 }
 .corsina-img {
     height: 85px;
-    width: 100px;
+    width: 125px;
     padding: 3px;
 }
 .item-content {
@@ -278,7 +278,23 @@ nav .fly-item,
 .bi-x {
     color: #e2e7ef;
 }
-
+.cart__num {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    color: #fff;
+    margin-top: -30px;
+    background-color: #de707d;
+    border-radius: 100%;
+    padding: 3px;
+    min-width: 16px;
+    min-height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+}
 
 /*  ВНУТРИ В РАРЗИНЕ */
 .mini-cart .subtotal {
@@ -298,8 +314,10 @@ nav .fly-item,
     margin-bottom: 1em;
 }
 
-.textp { 
+.fullprice { 
     color: var(--white-color);
+    font-size: 20px;
+    font-style: 500;
 }
 .primary-button-cor {
     border-radius: 20px;
@@ -329,7 +347,7 @@ nav .fly-item,
 }
 
 /* потом переместить в page cart */
-.pagle-title {
+.textp {
     color: white;
 }
 
@@ -505,7 +523,9 @@ b, strong {
     object-fit: cover;
     border-radius: 8px;
 }
-
+.card-images:hover > img {
+    transform: scale(1.1);
+  }
 
 
                              /* page single HTML */
