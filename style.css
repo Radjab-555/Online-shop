@@ -339,6 +339,7 @@ nav .fly-item,
     cursor: pointer;
     color: #f2f3f5;
     padding: 8px 8px 8px 8px;
+    width: 100%;
 }
 .secondary-button-cor:hover {
     color: #0d51fd;

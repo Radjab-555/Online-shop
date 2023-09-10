@@ -1,7 +1,7 @@
-const productBtn = document.querySelectorAll('.add-to-cart');          //addToCart
-const cartProductsList = document.querySelector('.products');  //products
-// const cart = document.querySelector('.icon-large');          // 
-const cartQuantity = document.querySelector('.cart__num');     //cartNum  id  class
+const productBtn = document.querySelectorAll('.add-to-cart');    
+const cartProductsList = document.querySelector('.products');  
+// const cart = document.querySelector('.icon-large');         
+const cartQuantity = document.querySelector('.cart__num');    
 const fullPrice = document.querySelector('.fullprice'); 
 const corsinaHeader = document.querySelector('.corsina-header');  
 // const cartProduct = document.querySelectorAll('.cart-product');
@@ -29,14 +29,14 @@ const minusFullPrice = (currentPrice) => {
 };
 
 const printFullPrice = () => {
-    fullPrice.textContent = `${normalPrice(price)} Р`;
+    fullPrice.textContent = `${normalPrice(price)} ₽`;
 };
 
 const printQuantity = () => {
     let lenght = cartProductsList.querySelector('.simplebar-content').children.length;
     cartQuantity.textContent = lenght;
     lenght > 0 ? corsinaHeader.classList.add('active') : corsinaHeader.classList.remove('active');
-};  // gotovo
+};  
 
 
 const deleteProducts = (productParent) => {
@@ -49,7 +49,7 @@ const deleteProducts = (productParent) => {
     printFullPrice();
     productParent.remove();
     printQuantity();
-};    //gotovo
+};    
 
 const generateItem = (img, title, white, id) => {
     return `
@@ -72,10 +72,10 @@ const generateItem = (img, title, white, id) => {
       </a>
     </div>
   </li>`;
-};     //gotovo
+};    
 
 productBtn.forEach(el => {
-    el.closest('.card-image').setAttribute('id', randomId()); //добавляет артиклам айди
+    el.closest('.card-image').setAttribute('id', randomId()); //добавляет айди
     el.addEventListener('click', (e) => {
         let self = e.currentTarget;
         let parent = self.closest('.card-image');
