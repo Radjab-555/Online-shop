@@ -1,30 +1,31 @@
 const productBtn = document.querySelectorAll('.add-to-cart');          //addToCart
 const cartProductsList = document.querySelector('.products');  //products
-const cart = document.querySelector('.icon-large');          // 
+// const cart = document.querySelector('.icon-large');          // 
 const cartQuantity = document.querySelector('.cart__num');     //cartNum  id  class
-const fullPrice = document.querySelector('.fullprice');   
+const fullPrice = document.querySelector('.fullprice'); 
+const corsinaHeader = document.querySelector('.corsina-header');  
 // const cartProduct = document.querySelectorAll('.cart-product');
 let price = 0;
 
 //СВИЗАТЬ АЙДИ С КАРЗИНОЙ И С ТОВАРОМ С КАЖДЫМ
 const randomId = () => {
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 };
 // УДАЛЕНИЕ ПРОБЕЛОВ 
 const priceWithoutSpaces = (str) => {
-    return str.replace(/\s/g, '')
+    return str.replace(/\s/g, '');
 };
 // ОБРАЗУЕТСЯ ПРОБЕЛЫ   
 const normalPrice = (str) => {
     return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 };
 //  СУММА +
-const plusFullPrice = (curentPrice) => {
-    return price += curentPrice;
+const plusFullPrice = (currentPrice) => {
+    return price += currentPrice;
 };
 // СУММА - 
-const minusFullPrice = (curentPrice) => {
-    return price -= curentPrice;
+const minusFullPrice = (currentPrice) => {
+    return price -= currentPrice;
 };
 
 const printFullPrice = () => {
@@ -32,17 +33,16 @@ const printFullPrice = () => {
 };
 
 const printQuantity = () => {
-    let lenght = products.querySelector('.simplebar-content').children.lenght;
-    cartNum.textContent = lenght;
-    lenght > 0 ? corsinaHeader.classList.add('active') : corsinaHeader.classList.remove('active')
+    let lenght = cartProductsList.querySelector('.simplebar-content').children.length;
+    cartQuantity.textContent = lenght;
+    lenght > 0 ? corsinaHeader.classList.add('active') : corsinaHeader.classList.remove('active');
 };  // gotovo
 
 
 const deleteProducts = (productParent) => {
     
     let id = productParent.querySelector('.item').dataset.id;
-    document.querySelector(`.flex-box[data-id="${id}"]`).querySelector('.bi-cart').disabled = false;  // get the id
-
+    document.querySelector(`.card-image[data-id="${id}"]`).querySelector('.bi-cart').disabled = false;  // get the id
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
     minusFullPrice(currentPrice);
     plusFullPrice(currentPrice);
@@ -75,10 +75,10 @@ const generateItem = (img, title, white, id) => {
 };     //gotovo
 
 productBtn.forEach(el => {
-    el.closest('.flex-box').setAttribute('id', randomId()); //добавляет артиклам айди
+    el.closest('.card-image').setAttribute('id', randomId()); //добавляет артиклам айди
     el.addEventListener('click', (e) => {
         let self = e.currentTarget;
-        let parent = self.closest('.flex-box');
+        let parent = self.closest('.card-image');
         let id = e.target.id; 
         let img = parent.querySelector('.card-images img').getAttribute('src');
         let title = parent.querySelector('.item-text').textContent;
@@ -87,15 +87,15 @@ productBtn.forEach(el => {
 
         plusFullPrice(priceNumber);// summa
         printFullPrice(); //вызов функции
-        console.log(cartProductsList.querySelector('.simplebar-content'));
-        cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id))// add to cart
+        // console.log(cartProductsList.querySelector('.simplebar-content'));
+        cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));// add to cart
         printQuantity(); //вызов функции
         self.disabled = true;
     });
-})
+});
 
-product.addEventListener('click', (e) => {
-    if (e.target.classList.contains('item-remove')) {
-        itemRemoveProducts(e.target.closest('.item'))
+cartProductsList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('bi-x')) {
+        deleteProducts(e.target.closest('.item'));
     }
 });
