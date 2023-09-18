@@ -216,14 +216,17 @@ nav .fly-item,
     right: 3px;
     height: auto;
     visibility: hidden;
-    opacity: 0;
-    transition-property: opacity, visibility; 
-    transition-duration: 0.2s;
+    /* opacity: 0; */
+    /* transition-property: opacity, visibility;  */
+    transition-duration: 90.2s;
     transition-delay: 0.15s; 
 }
 .iscart:hover .mini-cart {
     visibility: visible;
-    opacity: 1;
+    /* opacity: 1; */
+}
+.mini {
+    max-height: 250px;
 }
 :is(.mini-cart .products, .products-cart) .thumbnail img {
     transform: none;
@@ -259,24 +262,36 @@ nav .fly-item,
     margin-right: 1em;
 }
 
-
+.cart-product {
+    display: flex;
+    margin-bottom: 10px;
+}
+.item {
+    display: block;
+    width: 100%;
+}
 .white {
     color: #fff;
     margin-left: 10px;
 }
 .corsina-img {
-    height: 85px;
-    width: 125px;
-    padding: 3px;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
 }
 .item-content {
-    position: relative;
-    float: right;
-    font-size: 13px;
-    width: 251px;
+    max-width: 280px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 20px;
+    width: 145px;
+    color: var(--light-bg-color);
 } 
 .bi-x {
     color: #e2e7ef;
+    position: absolute;
 }
 .cart__num {
     position: absolute;
@@ -332,7 +347,7 @@ nav .fly-item,
     background-color: #453c5c;
     transition: var(--trans-background-color);
 }
-.secondary-button-cor {
+.close-modal {
     border-radius: 20px;
     background-color: #431515;
     /* margin-left: 20px; */
@@ -340,8 +355,10 @@ nav .fly-item,
     color: #f2f3f5;
     padding: 8px 8px 8px 8px;
     width: 100%;
+    /* display: none; */
+    z-index: 4;
 }
-.secondary-button-cor:hover {
+.close-modal:hover {
     color: #0d51fd;
     background-color: #453c5c;
     transition: var(--trans-background-color);
