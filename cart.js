@@ -1,5 +1,5 @@
 const productBtn = document.querySelectorAll('.add-to-cart');    
-const cartProductsList = document.querySelector('.products');  
+const cartProductsList = document.querySelector('.mini');  
 // const cart = document.querySelector('.icon-large');         
 const cartQuantity = document.querySelector('.cart__num');    
 const fullPrice = document.querySelector('.fullprice'); 
@@ -83,16 +83,14 @@ const generateItem = (img, title, white, id) => {
 };    
 
 productBtn.forEach(el => {
-    el.closest('.card-image').setAttribute('id', randomId()); //добавляет айди
+    el.closest('.card-image').setAttribute('id', randomId()); 
     el.addEventListener('click', (e) => {
         let self = e.currentTarget;
         let parent = self.closest('.card-image');
         let id = e.target.id; 
-        let img = parent.querySelector('.card-images img').getAttribute('src');
-        // console.log('img');
+        let img = parent.querySelector('.img-fluid').getAttribute('src');
         let title = parent.querySelector('.item-text').textContent;
         let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.price').textContent));
-
         plusFullPrice(priceNumber);
         printFullPrice(); 
         cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
@@ -106,6 +104,14 @@ cartProductsList.addEventListener('click', (e) => {
         deleteProducts(e.target.closest('.item'));
     }
 });
+
+// function addToCard (key) {
+//     if (cartProductsList[key] = null) {
+//         cartProductsList[key] = products[key]
+//     }
+// }
+
+
 
 
 // var closeButtons = ('.close-modal');
