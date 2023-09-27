@@ -42,13 +42,13 @@ const printQuantity = () => {
     let lenght = cartProductsList.querySelector('simplebar-content').children.lenght;
     cartQuantity.textContent = lenght;
     lenght > 0 ? corsinaHeader.classList.add('active') : corsinaHeader.classList.remove('active');
+    printQuantity();
 };  
 
 
 const deleteProducts = (productParent) => {
     
     let id = productParent.querySelectorAll('.item').id="${id}";
-    // dataset.id;
     document.querySelector(`.card-image[data-id="${id}"]`);
     document.querySelector('.bi-cart').disabled = false;  // get the id
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
@@ -105,11 +105,6 @@ cartProductsList.addEventListener('click', (e) => {
     }
 });
 
-// function addToCard (key) {
-//     if (cartProductsList[key] = null) {
-//         cartProductsList[key] = products[key]
-//     }
-// }
 
 
 
@@ -119,4 +114,6 @@ cartProductsList.addEventListener('click', (e) => {
 //   $(this).parent().hide().css('display', 'none');
 // });
 
-// document.getElementById("closeShoping").addEventListener('cli‌​ck', function(){ document.getElementById("nameToClose").style.display = "none"; })
+document.getElementById("closeShoping").addEventListener('cli‌​ck', function(){
+     document.querySelector(".close-modal").style.display = "none"; 
+    });

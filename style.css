@@ -207,27 +207,26 @@ nav .fly-item,
 /* MINI CART */
 
 .mini-cart {
+    cursor: default;
     position: absolute;
     width: 350px;
     top: 100%;
     background-color:#000000;
-    z-index: 1000;
+    /* z-index: 1000; */
     box-shadow: rgba(3, 3, 3, 0.719) 0 10PX 50px;
     right: 3px;
-    height: auto;
+    /* height: auto; */
     visibility: hidden;
-    /* opacity: 0; */
-    /* transition-property: opacity, visibility;  */
-    transition-duration: 90.2s;
-    transition-delay: 0.15s; 
+    opacity: 0;
+    transition-property: opacity, visibility; 
+    transition-duration: 0.15s;
+    transition-delay: 0.5s; 
 }
 .iscart:hover .mini-cart {
     visibility: visible;
-    /* opacity: 1; */
+    opacity: 1;
 }
-.mini {
-    max-height: 250px;
-}
+
 :is(.mini-cart .products, .products-cart) .thumbnail img {
     transform: none;
 }
@@ -248,12 +247,16 @@ nav .fly-item,
     margin-bottom: 1em;
     border-bottom: 1px solid var(--border-color);
 }
-.mini-cart .cart-boby {
+.cart-body {
+    overflow: hidden;
+    max-height: 250px;
+}
+/* .mini-cart .cart-boby {
     padding: 0 1.5em;
     margin: 0 -1.5em;
-    max-height: 450px;
+    max-height: 350px;
     overflow: auto;
-}
+} */
 :where(.mini-cart, .products.cart) .thumbnail {
     position: relative;
     width: 80px;
@@ -368,7 +371,6 @@ nav .fly-item,
 .textp {
     color: white;
 }
-
 b, strong {
     font-weight: bolder;
     /* margin-left: 100px; */
@@ -377,6 +379,7 @@ b, strong {
 
 /* PAGE CART управление и хранение товаров */
 .products.cart form {
+    max-height: 350px;
     width: var(--percent100);
 }
 .products.cart table thead th {
@@ -424,6 +427,30 @@ b, strong {
 .strong-item {
     padding: 0 0 0 0;
 }
+.simplebar-track.simplebar-vertical {
+    width: 3px;
+    background-color: rgba(239, 12, 12, 0.919);
+    border-radius: 5px;
+    margin-top: 20px;
+    height: calc(100% - 40px);
+    right: 5px;
+}
+.simplebar-track.simplebar-vertical {
+    visibility: visible;
+}
+.simplebar-track.simplebar-vertical .simplebar-scrollbar::before {
+    background-color: rgba(233, 229, 229, 0.822);
+    border-radius: 5px;
+    width: 100%;
+    opacity: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+/* .simplebar-vertical {
+    visibility: initial;
+} */
 
 
 
