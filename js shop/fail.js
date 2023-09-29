@@ -1,13 +1,12 @@
-const productBtn = document.querySelectorAll('.add-to-cart');    
-const cartProductsList = document.querySelector('.mini');  
-// const cart = document.querySelector('.icon-large');         
-const cartQuantity = document.querySelector('.cart__num');    
+const productBtn = document.querySelectorAll('.add-to-cart'); 
+const cartProductsList = document.querySelector('.mini'); 
+const cartQuantity = document.querySelector('.cart__num');  
 const fullPrice = document.querySelector('.fullprice'); 
-const corsinaHeader = document.querySelector('.corsina-header');  
+const corsinaHeader = document.querySelector('.corsina-header'); 
 const closeShoping = document.querySelector('.close-modal');
 const body = document.querySelector('body');
-// const cartProduct = document.querySelectorAll('.cart-product');
-let price = 0;
+let price = 0; 
+
 
 //СВИЗАТЬ АЙДИ С КАРЗИНОЙ И С ТОВАРОМ С КАЖДЫМ
 const randomId = () => {
@@ -38,26 +37,25 @@ closeShoping.addEventListener('click', ()=> {
     body.classList.remove('active');
   });
 
-const printQuantity = () => {
+  const printQuantity = () => {
     let lenght = cartProductsList.querySelector('simplebar-content').children.lenght;
     cartQuantity.textContent = lenght;
     lenght > 0 ? corsinaHeader.classList.add('active') : corsinaHeader.classList.remove('active');
     printQuantity();
-};  
-
+};
 
 const deleteProducts = (productParent) => {
     
     let id = productParent.querySelectorAll('.item').id="${id}";
-    document.querySelector(`.card-image[data-id="${id}"]`);
-    document.querySelector('.bi-cart').disabled = false;  // get the id
+    document.querySelector(`.flexwrap[data-id="${id}"]`);
+    document.querySelector('.add-to-cart').disabled = false;  // get the id
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
     minusFullPrice(currentPrice);
     plusFullPrice(currentPrice);
     printFullPrice();
     productParent.remove();
     // printQuantity();
-};    
+}; 
 
 const generateItem = (img, title, white, id) => {
     return `
@@ -80,17 +78,18 @@ const generateItem = (img, title, white, id) => {
       </a>
     </div>
   </li>`;
-};    
+}; 
+
 
 productBtn.forEach(el => {
-    el.closest('.card-image').setAttribute('id', randomId()); 
+    el.closest('.flexwrap').setAttribute('id', randomId()); 
     el.addEventListener('click', (e) => {
         let self = e.currentTarget;
-        let parent = self.closest('.card-image');
+        let parent = self.closest('.flexwrap');
         let id = e.target.id; 
-        let img = parent.querySelector('.img-fluid').getAttribute('src');
-        let title = parent.querySelector('.item-text').textContent;
-        let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.price').textContent));
+        let img = parent.querySelector('.big-image img').getAttribute('src');
+        let title = parent.querySelector('.title-text').textContent;
+        let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.current').textContent));
         plusFullPrice(priceNumber);
         printFullPrice(); 
         cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
@@ -105,15 +104,11 @@ cartProductsList.addEventListener('click', (e) => {
     }
 });
 
-
-
-
-
-// var closeButtons = ('.close-modal');
-// closeButtons.of('click', function() {
-//   $(this).parent().hide().css('display', 'none');
-// });
-
-document.getElementById("closeShoping").addEventListener('cli‌​ck', function(){
-     document.querySelector(".close-modal").style.display = "none"; 
-    });
+// товар number
+// document.addEventListener('click', function (e) {
+//     if (e.target.classList.contains("increase")) {
+//       ++e.target.parentElement.querySelector("input").value;
+//     } else if (e.target.classList.contains("decrease")) {
+//       --e.target.parentElement.querySelector("input").value;
+//     }
+//   })

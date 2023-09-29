@@ -1,4 +1,4 @@
-
+@import 'simplebar.css';
                                 /* fonts */
 :root {
     --primary-color: #ff6b6d;
@@ -219,8 +219,8 @@ nav .fly-item,
     visibility: hidden;
     opacity: 0;
     transition-property: opacity, visibility; 
-    transition-duration: 0.15s;
-    transition-delay: 0.5s; 
+    transition-duration: 0.95s;
+    transition-delay: 0.3s; 
 }
 .iscart:hover .mini-cart {
     visibility: visible;
@@ -295,6 +295,7 @@ nav .fly-item,
 .bi-x {
     color: #e2e7ef;
     position: absolute;
+    right: 0;
 }
 .cart__num {
     position: absolute;
