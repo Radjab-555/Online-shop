@@ -220,7 +220,7 @@ nav .fly-item,
     opacity: 0;
     transition-property: opacity, visibility; 
     transition-duration: 0.95s;
-    transition-delay: 0.3s; 
+    transition-delay: 0.1s; 
 }
 .iscart:hover .mini-cart {
     visibility: visible;
