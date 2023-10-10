@@ -34,27 +34,25 @@ const printFullPrice = () => {
 };
 // ЗАКРЫТЬ КОРЗИНУ
 closeShoping.addEventListener('click', ()=> {
-    body.classList.remove('active');
+    body.classList.remove('.mini');
   });
 
   const printQuantity = () => {
-    let lenght = cartProductsList.querySelector('simplebar-content').children.lenght;
-    cartQuantity.textContent = lenght;
-    lenght > 0 ? corsinaHeader.classList.add('active') : corsinaHeader.classList.remove('active');
-    printQuantity();
+    let length = cartProductsList.querySelector('simplebar-content').children.length;
+    cartQuantity.textContent = length;
+    // length > 0 ? corsinaHeader.classList.add('mini') : corsinaHeader.classList.remove('active');
+    // printQuantity();
 };
 
 const deleteProducts = (productParent) => {
-    
     let id = productParent.querySelectorAll('.item').id="${id}";
     document.querySelector(`.flexwrap[data-id="${id}"]`);
     document.querySelector('.add-to-cart').disabled = false;  // get the id
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
     minusFullPrice(currentPrice);
-    plusFullPrice(currentPrice);
     printFullPrice();
     productParent.remove();
-    // printQuantity();
+    printQuantity();
 }; 
 
 const generateItem = (img, title, white, id) => {
@@ -92,8 +90,9 @@ productBtn.forEach(el => {
         let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.current').textContent));
         plusFullPrice(priceNumber);
         printFullPrice(); 
+        // minusFullPrice(priceNumber);
         cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
-        printQuantity(); 
+        printQuantity();
         self.disabled = true;
     });
 });
@@ -111,4 +110,4 @@ cartProductsList.addEventListener('click', (e) => {
 //     } else if (e.target.classList.contains("decrease")) {
 //       --e.target.parentElement.querySelector("input").value;
 //     }
-//   })
+//   });

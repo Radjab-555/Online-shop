@@ -1,4 +1,4 @@
-@import 'simplebar.css';
+
                                 /* fonts */
 :root {
     --primary-color: #ff6b6d;
@@ -39,6 +39,10 @@ a {
     text-decoration: none;
     --webkit-tap-highlight-color: transparent;
     color: #fff;
+}
+body {
+    margin: 0;
+    overflow-anchor: none;
 }
 
 img {
@@ -202,10 +206,7 @@ nav .fly-item,
     background-color: var(--secondary-darc-color);
     border-radius: var(--percent50);
 }
-
-
 /* MINI CART */
-
 .mini-cart {
     cursor: default;
     position: absolute;
@@ -217,14 +218,15 @@ nav .fly-item,
     right: 3px;
     /* height: auto; */
     visibility: hidden;
-    opacity: 0;
-    transition-property: opacity, visibility; 
-    transition-duration: 0.95s;
-    transition-delay: 0.1s; 
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s; 
+    /* transition-duration: 0.45s;
+    transition-delay: 0.1s;  */
 }
 .iscart:hover .mini-cart {
     visibility: visible;
     opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s; 
 }
 
 :is(.mini-cart .products, .products-cart) .thumbnail img {
@@ -265,10 +267,17 @@ nav .fly-item,
     margin-right: 1em;
 }
 
+.mini {
+    padding: 0;
+}
 .cart-product {
     display: flex;
     margin-bottom: 10px;
+    align-items: center;
+    padding: 12px 0px 0 7px;
+    transition: bacground-color 0.3s;
 }
+
 .item {
     display: block;
     width: 100%;
@@ -292,10 +301,17 @@ nav .fly-item,
     width: 145px;
     color: var(--light-bg-color);
 } 
+.mini .item:hover {
+    background-color:#444547;
+}
 .bi-x {
     color: #e2e7ef;
     position: absolute;
     right: 0;
+    bottom: 60px;
+}
+.bi-x:hover {
+    background-color: #36456b;
 }
 .cart__num {
     position: absolute;
@@ -376,7 +392,7 @@ b, strong {
     font-weight: bolder;
     /* margin-left: 100px; */
 }
-                                                   1/59/10
+                                                 
 
 /* PAGE CART управление и хранение товаров */
 .products.cart form {
@@ -629,7 +645,9 @@ b, strong {
 .products :is(.swiper-button-next, .swiper-button-prev) {
     outline: 0;
     /* color: var(--secondary-dark-color); */
-    color: #794afa;
+    color: #1b1136;
+    height: 20px;
+    width: 20px;
     transition: var(--trans-background), transform .3s;
 }
 .products .big-image:hover .swiper-button-next {
@@ -643,7 +661,7 @@ b, strong {
 }
 .products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
     /* background-color: var(--light-bg-color); */
-    background-color: #f2f3f5;
+    /* background-color: #1d2637; */
 }
 
 

@@ -1,15 +1,19 @@
 const productBtn = document.querySelectorAll('.add-to-cart');    
-const cartProductsList = document.querySelector('.mini');  
-// const cart = document.querySelector('.icon-large');         
+const cartProductsList = document.querySelector('.mini');        
 const cartQuantity = document.querySelector('.cart__num');    
 const fullPrice = document.querySelector('.fullprice'); 
 const corsinaHeader = document.querySelector('.corsina-header');  
-const closeShoping = document.querySelector('.close-modal');
+// const closeShoping = document.querySelector('.close-modal');
 const body = document.querySelector('body');
-// const cartProduct = document.querySelectorAll('.cart-product');
-
 let price = 0;
 
+
+const cartsQuantity = localStorage.getItem("cartsQuantity");
+if (!cartsQuantity) {
+    cartsQuantity = 0;
+    cartsQuantity++;
+}
+localStorage.setItem("cartsQuantity", cartsQuantity);
 
 //СВИЗАТЬ АЙДИ С КАРЗИНОЙ И С ТОВАРОМ С КАЖДЫМ
 const randomId = () => {
@@ -35,30 +39,25 @@ const minusFullPrice = (currentPrice) => {
 const printFullPrice = () => {
     fullPrice.textContent = `${normalPrice(price)} ₽`;
 };
-// ЗАКРЫТЬ КОРЗИНУ
-closeShoping.addEventListener('click', ()=> {
-    body.classList.remove('active');
-  });
 
-const printQuantity = () => {
-    let lenght = cartProductsList.querySelector('simplebar-content').children.lenght;
-    cartQuantity.textContent = lenght;
-    lenght > 0 ? corsinaHeader.classList.add('active') : corsinaHeader.classList.remove('active');
-    printQuantity();
-};  
+
+
+// const printQuantity = () => {
+//     let lenght = cartProductsList.querySelector('simplebar-content').children.lenght;
+//     cartQuantity.textContent = lenght;
+//     printQuantity();
+// };  
 
 
 const deleteProducts = (productParent) => {
-    
     let id = productParent.querySelectorAll('.item').id="${id}";
     document.querySelector(`.card-image[data-id="${id}"]`);
     document.querySelector('.bi-cart').disabled = false;  // get the id
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
     minusFullPrice(currentPrice);
-    plusFullPrice(currentPrice);
     printFullPrice();
     productParent.remove();
-    // printQuantity();
+    printQuantity();
 };    
 
 const generateItem = (img, title, white, id) => {
@@ -93,9 +92,9 @@ productBtn.forEach(el => {
         let title = parent.querySelector('.item-text').textContent;
         let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.price').textContent));
         plusFullPrice(priceNumber);
-        printFullPrice(); 
+        printFullPrice();
         cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
-        printQuantity(); 
+        // printQuantity(); 
         self.disabled = true;
     });
 });
@@ -107,12 +106,7 @@ cartProductsList.addEventListener('click', (e) => {
 });
 
 
-// var closeButtons = ('.close-modal');
-// closeButtons.of('click', function() {
-//   $(this).parent().hide().css('display', 'none');
-// });
-
-document.getElementById("closeShoping").addEventListener('cli‌​ck', function(){
-     document.querySelector(".close-modal").style.display = "none"; 
-    });
+// let clise = document.getElementById("closeShoping").addEventListener('cli‌​ck', function(){
+//      document.querySelector(".close-modal").style.display = "none"; 
+//     });
 
