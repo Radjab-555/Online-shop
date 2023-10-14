@@ -10,7 +10,7 @@
 // }
 
 // slider
-const swiper = new Swiper(' swiper', {
+var swiper = new Swiper('.swiper', {
     loop: true,
     
     pagination: {

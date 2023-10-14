@@ -8,12 +8,12 @@ const body = document.querySelector('body');
 let price = 0;
 
 
-const cartsQuantity = localStorage.getItem("cartsQuantity");
-if (!cartsQuantity) {
-    cartsQuantity = 0;
-    cartsQuantity++;
-}
-localStorage.setItem("cartsQuantity", cartsQuantity);
+// const cartsQuantity = localStorage.getItem("cartsQuantity");
+// if (!cartsQuantity) {
+//     cartsQuantity = 0;
+//     cartsQuantity++;
+// }
+// localStorage.setItem("cartsQuantity", cartsQuantity);
 
 //СВИЗАТЬ АЙДИ С КАРЗИНОЙ И С ТОВАРОМ С КАЖДЫМ
 const randomId = () => {
