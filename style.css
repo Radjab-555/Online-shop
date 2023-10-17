@@ -43,8 +43,11 @@ a {
 body {
     margin: 0;
     overflow-anchor: none;
+    background-color: rgb(20, 14, 14);
 }
-
+/* body {
+    
+} */
 img {
     max-width: var(--percent100);
     vertical-align: middle;
@@ -80,9 +83,7 @@ img {
     flex-direction: column;
     gap: 1em;
 }
-body {
-    background-color: rgb(20, 14, 14);
-}
+
 /* header */
 /* .header li {
     position: relative;
@@ -752,6 +753,7 @@ b, strong {
     /* margin-left: 20px; */
     cursor: pointer;
     color: #f2f3f5;
+    border: none;
 }
 .primary-button:hover {
     color: #0d51fd;
@@ -991,24 +993,24 @@ form :where(input,textarea)  {
 .alert-primary-text {
     width: 550px;
     height: auto;
-    background-color: #696f7a;
-    border: 1px solid #696f7a;
+    background-color: rgb(20, 14, 14);
+    /* border: 1px solid #696f7a; */
     border-radius: 30px;
     padding: .375rem 0.75rem;;
 }
 .alert-success-text  {
-    height: auto;
-    min-height: 70px;
-    max-height: 400px;
+    height: 90px;
+    /* min-height: 70px; */
+    /* max-height: 400px; */
     width: 550px;
-    background-color: #696f7a;
-    border: 1px solid #696f7a;
+    background-color: rgb(20, 14, 14);
+    /* border: 1px solid #696f7a; */
     border-radius: 30px;
     padding: .375rem 0.75rem;;
     color: #e2e7ef;
 }
 .form-control-textarea {
-    height: 70px;
+    height: auto;
     min-height: 70px;
     max-height: 400px;
 }
