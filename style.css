@@ -1229,7 +1229,7 @@ form :where(input,textarea)  {
         margin: 20px;
     }
     .products.one .thumbnail-show {
-        margin:  0 2em 2em 1em;
+        margin:  0 2em 2em -1em;
         max-width: 200px;
     }
 }
