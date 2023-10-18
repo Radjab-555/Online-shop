@@ -637,8 +637,9 @@ b, strong {
     width: 130px;
     height: 110px;
     overflow: hidden;
-    margin: 0 2em 2em 0;
-} 
+    margin: 5px -52em 1em -26px;
+    /* margin: 0 2em 2em 0; */
+}
 .products :is(.swiper-button-next, .swiper-button-prev) {
     outline: 0;
     /* color: var(--secondary-dark-color); */
@@ -654,12 +655,11 @@ b, strong {
     transform: translateX(-10px);
 }
 .products :is(.swiper-button-next, .swiper-button-prev)::after {
-    font-size: 3.5em;
+    font-size: 2.5em;
 }
-.products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
-    /* background-color: var(--light-bg-color); */
-    /* background-color: #1d2637; */
-}
+/* .products .big-image:hover :is(.swiper-button-next, .swiper-button-prev) {
+    background-color: #1d2637;
+} */
 
 
        /* 08 PAGE SINGLE 
@@ -1083,6 +1083,10 @@ form :where(input,textarea)  {
     .products.one .thumbnail-show {
         height: 160px;
     }
+    .products.one .thumbnail-show {
+        margin:  0 0em 1em 0em;
+        max-width: 200px;
+    }
 }
 
 
@@ -1104,6 +1108,10 @@ form :where(input,textarea)  {
     }
     .products.one .thumbnail-show {
         height: 160px;
+    }
+    .products.one .thumbnail-show {
+        margin:  0 2em 2em 1em;
+        max-width: 200px;
     }
 }
 
@@ -1132,6 +1140,10 @@ form :where(input,textarea)  {
         top: 0;
         right: 0;
     }
+    .products.one .thumbnail-show {
+        margin:  0 2em 2em 1em;
+        max-width: 200px;
+    }
 }
 /* and (max-width: 990px) */
 @media (min-width: 768px) {
@@ -1158,6 +1170,10 @@ form :where(input,textarea)  {
     .col-md-6 {
         flex: 0 0 auto;
         width: 100%;
+    }
+    .products.one .thumbnail-show {
+        margin:  0 2em 2em 1em;
+        max-width: 200px;
     }
 }
 
@@ -1211,5 +1227,9 @@ form :where(input,textarea)  {
         flex: 0 0 auto;
         width: 990px;
         margin: 20px;
+    }
+    .products.one .thumbnail-show {
+        margin:  0 2em 2em 1em;
+        max-width: 200px;
     }
 }
