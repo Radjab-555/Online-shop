@@ -3,10 +3,18 @@ const cartProductsList = document.querySelector('.mini');
 const cartQuantity = document.querySelector('.cart__num');    
 const fullPrice = document.querySelector('.fullprice'); 
 const corsinaHeader = document.querySelector('.corsina-header');  
-// const closeShoping = document.querySelector('.close-modal');
+const closeShoping = document.querySelector('.close-modal');
 const body = document.querySelector('body');
+// const save = document.getElementById('save');
 let price = 0;
 
+
+corsinaHeader.addEventListener('click', () => {
+    body.classList.toggle('showcart')
+})
+closeShoping.addEventListener('click', () => {
+    body.classList.toggle('showcart')
+})
 
 // const cartsQuantity = localStorage.getItem("cartsQuantity");
 // if (!cartsQuantity) {
@@ -16,6 +24,7 @@ let price = 0;
 // localStorage.setItem("cartsQuantity", cartsQuantity);
 
 //СВИЗАТЬ АЙДИ С КАРЗИНОЙ И С ТОВАРОМ С КАЖДЫМ
+
 const randomId = () => {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 };
@@ -106,7 +115,58 @@ cartProductsList.addEventListener('click', (e) => {
 });
 
 
+localStorage.setItem("username", "bosh");
+localStorage.setItem("email", "bosj@hede");
+localStorage.setItem("username", "bosfhcebh");
+localStorage.clear();
+
+
 // let clise = document.getElementById("closeShoping").addEventListener('cli‌​ck', function(){
 //      document.querySelector(".close-modal").style.display = "none"; 
 //     });
-
+const order = {
+    customeName: 'ФИО' ,
+    customerContact: 'номер телефона' ,
+    items: [
+        {
+            name: 'Травел' ,
+            price: '5500'
+        },
+        {
+            name: 'Клатч' ,
+            price: '12000'
+        },
+        {
+            name: 'Картхолдер' ,
+            price: '2500'
+        },
+        {
+            name: 'Бифолд' ,
+            price: '4500'
+        },
+        {
+            name: 'Бифолд с монетницей' ,
+            price: '5500'
+        },
+        {
+            name: 'Ремень' ,
+            price: '4500'
+        },
+        {
+            name: 'Обложка на паспорт' ,
+            price: '3500'
+        },
+        {
+            name: 'Папка' ,
+            price: '4500'
+        },
+        {
+            name: 'Блокнот' ,
+            price: '4500'
+        },
+        {
+            name: 'Бювар' ,
+            price: '9900'
+        }
+    ]
+}
