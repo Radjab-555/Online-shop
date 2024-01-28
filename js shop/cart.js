@@ -47,22 +47,28 @@ const printFullPrice = () => {
 
 
 
-const printQuantity = () => {
-    let lenght = cartProductsList.querySelector('simplebar-content').children.lenght;
-    cartQuantity.textContent = lenght;
-    printQuantity();
-};  
+const incrementQuantity = () => {
+    const currentQuantity = +cartQuantity.textContent;
+    console.log(currentQuantity)
+    cartQuantity.innerHTML = currentQuantity + 1;
+}; 
+
+const decrementQuantity = () => {
+    const currentQuantity = +cartQuantity.textContent;
+    console.log(currentQuantity)
+    cartQuantity.innerHTML = currentQuantity - 1;
+}; 
 
 
 const deleteProducts = (productParent) => {
-    let id = productParent.querySelectorAll('.item').id="${id}";
+    productParent.querySelectorAll('.item').id="${id}";
     document.querySelector(`.card-image[data-id="${id}"]`);
     document.querySelector('.bi-cart').disabled = false;  // get the id
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
     minusFullPrice(currentPrice);
     printFullPrice();
     productParent.remove();
-    printQuantity();
+    decrementQuantity();
 };    
 
 const generateItem = (img, title, white, id) => {
@@ -99,7 +105,7 @@ productBtn.forEach(el => {
         plusFullPrice(priceNumber);
         printFullPrice();
         cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
-        // printQuantity(); 
+        incrementQuantity(); 
         self.disabled = true;
     });
 });
