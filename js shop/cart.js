@@ -9,12 +9,9 @@ const body = document.querySelector('body');
 let price = 0;
 
 
-corsinaHeader.addEventListener('click', () => {
-    body.classList.toggle('showcart')
-})
-closeShoping.addEventListener('click', () => {
-    body.classList.toggle('showcart')
-})
+// corsinaHeader.addEventListener('click', () => {
+//     body.classList.toggle('showcart')
+// })
 
 // const cartsQuantity = localStorage.getItem("cartsQuantity");
 // if (!cartsQuantity) {
@@ -24,7 +21,6 @@ closeShoping.addEventListener('click', () => {
 // localStorage.setItem("cartsQuantity", cartsQuantity);
 
 //СВИЗАТЬ АЙДИ С КАРЗИНОЙ И С ТОВАРОМ С КАЖДЫМ
-
 const randomId = () => {
     return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 };
@@ -51,11 +47,11 @@ const printFullPrice = () => {
 
 
 
-// const printQuantity = () => {
-//     let lenght = cartProductsList.querySelector('simplebar-content').children.lenght;
-//     cartQuantity.textContent = lenght;
-//     printQuantity();
-// };  
+const printQuantity = () => {
+    let lenght = cartProductsList.querySelector('simplebar-content').children.lenght;
+    cartQuantity.textContent = lenght;
+    printQuantity();
+};  
 
 
 const deleteProducts = (productParent) => {

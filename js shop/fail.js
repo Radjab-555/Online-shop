@@ -7,6 +7,19 @@ const closeShoping = document.querySelector('.close-modal');
 const body = document.querySelector('body');
 let price = 0; 
 
+const order = document.querySelector('.primary-button-cor');
+
+const primaryButtonCor  = {
+    customerName: 'Тут имя',
+    customerContact: 'Тут номер телефона или телеграмм',
+    items: [
+        {
+            name: '',
+            price: ''
+        }
+    ]
+};
+
 
 //СВИЗАТЬ АЙДИ С КАРЗИНОЙ И С ТОВАРОМ С КАЖДЫМ
 const randomId = () => {
@@ -32,13 +45,10 @@ const minusFullPrice = (currentPrice) => {
 const printFullPrice = () => {
     fullPrice.textContent = `${normalPrice(price)} ₽`;
 };
-// ЗАКРЫТЬ КОРЗИНУ
-closeShoping.addEventListener('click', ()=> {
-    body.classList.remove('.mini');
-  });
+
 
   const printQuantity = () => {
-    let length = cartProductsList.querySelector('simplebar-content').children.length;
+    let length = cartProductsList.querySelector('.simplebar-content').children.length;
     cartQuantity.textContent = length;
     // length > 0 ? corsinaHeader.classList.add('mini') : corsinaHeader.classList.remove('active');
     // printQuantity();
@@ -50,7 +60,7 @@ const deleteProducts = (productParent) => {
     document.querySelector('.add-to-cart').disabled = false;  // get the id
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
     minusFullPrice(currentPrice);
-    printFullPrice();
+    printFullPrice(currentPrice);
     productParent.remove();
     printQuantity();
 }; 
