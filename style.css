@@ -311,6 +311,8 @@ nav .fly-item,
     position: absolute;
     right: 0;
     bottom: 60px;
+    width: 30px;
+    height: 20px;
 }
 .bi-x:hover {
     background-color: #36456b;

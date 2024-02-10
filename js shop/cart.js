@@ -5,20 +5,8 @@ const fullPrice = document.querySelector('.fullprice');
 const corsinaHeader = document.querySelector('.corsina-header');  
 const closeShoping = document.querySelector('.close-modal');
 const body = document.querySelector('body');
-// const save = document.getElementById('save');
 let price = 0;
 
-
-// corsinaHeader.addEventListener('click', () => {
-//     body.classList.toggle('showcart')
-// })
-
-// const cartsQuantity = localStorage.getItem("cartsQuantity");
-// if (!cartsQuantity) {
-//     cartsQuantity = 0;
-//     cartsQuantity++;
-// }
-// localStorage.setItem("cartsQuantity", cartsQuantity);
 
 //СВИЗАТЬ АЙДИ С КАРЗИНОЙ И С ТОВАРОМ С КАЖДЫМ
 const randomId = () => {
@@ -32,43 +20,28 @@ const priceWithoutSpaces = (str) => {
 const normalPrice = (str) => {
     return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 };
-//  СУММА +
-const plusFullPrice = (currentPrice) => {
-    return price += currentPrice;
-};
-// СУММА - 
-const minusFullPrice = (currentPrice) => {
-    return price -= currentPrice;
-};
 
 const printFullPrice = () => {
     fullPrice.textContent = `${normalPrice(price)} ₽`;
 };
 
-
-
+//  СУММА +
 const incrementQuantity = () => {
     const currentQuantity = +cartQuantity.textContent;
-    console.log(currentQuantity)
     cartQuantity.innerHTML = currentQuantity + 1;
 }; 
-
+//  СУММА -
 const decrementQuantity = () => {
-    const currentQuantity = +cartQuantity.textContent;
-    console.log(currentQuantity)
+    const currentQuantity = -cartQuantity.textContent;
     cartQuantity.innerHTML = currentQuantity - 1;
 }; 
 
 
 const deleteProducts = (productParent) => {
-    productParent.querySelectorAll('.item').id="${id}";
-    document.querySelector(`.card-image[data-id="${id}"]`);
-    document.querySelector('.bi-cart').disabled = false;  // get the id
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
-    minusFullPrice(currentPrice);
     printFullPrice();
     productParent.remove();
-    decrementQuantity();
+    decrementQuantity(currentPrice);
 };    
 
 const generateItem = (img, title, white, id) => {
@@ -102,10 +75,10 @@ productBtn.forEach(el => {
         let img = parent.querySelector('.img-fluid').getAttribute('src');
         let title = parent.querySelector('.item-text').textContent;
         let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.price').textContent));
-        plusFullPrice(priceNumber);
+       
         printFullPrice();
         cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
-        incrementQuantity(); 
+        incrementQuantity(priceNumber);
         self.disabled = true;
     });
 });
@@ -117,58 +90,65 @@ cartProductsList.addEventListener('click', (e) => {
 });
 
 
-localStorage.setItem("username", "bosh");
-localStorage.setItem("email", "bosj@hede");
-localStorage.setItem("username", "bosfhcebh");
-localStorage.clear();
-
-
-// let clise = document.getElementById("closeShoping").addEventListener('cli‌​ck', function(){
-//      document.querySelector(".close-modal").style.display = "none"; 
-//     });
-const order = {
-    customeName: 'ФИО' ,
-    customerContact: 'номер телефона' ,
-    items: [
-        {
-            name: 'Травел' ,
-            price: '5500'
-        },
-        {
-            name: 'Клатч' ,
-            price: '12000'
-        },
-        {
-            name: 'Картхолдер' ,
-            price: '2500'
-        },
-        {
-            name: 'Бифолд' ,
-            price: '4500'
-        },
-        {
-            name: 'Бифолд с монетницей' ,
-            price: '5500'
-        },
-        {
-            name: 'Ремень' ,
-            price: '4500'
-        },
-        {
-            name: 'Обложка на паспорт' ,
-            price: '3500'
-        },
-        {
-            name: 'Папка' ,
-            price: '4500'
-        },
-        {
-            name: 'Блокнот' ,
-            price: '4500'
-        },
-        {
-            name: 'Бювар' ,
-            price: '9900'
-        }
-    ]
-}
+// let products = [
+//     {
+//       id: '1',
+//       name: 'Трвел',
+//       Image: 'images/travel/1.1.JPG',
+//       price: '8990'
+//      },
+//     {
+//       id: 2,
+//       name: 'Клатч',
+//       Image: 'images/klath/klath1.2.JPG',
+//       price: '11 990'
+//     },
+//     {
+//       id: 3,
+//       name: 'Картхолдеры',
+//       Image: 'images/imageSMALL/Small4.1.JPG',
+//       price: '2500'
+//     },
+//     {
+//       id: 4,
+//       name: 'Классический кошелек',
+//       Image: 'images/imageSMALL/small114.jpg',
+//       price: '6 490'
+//     },
+//     {
+//       id: 5,
+//       name: 'Бифолд с монетницей',
+//       Image: 'images/manetnica/111.jpg',
+//       price: '5 500'
+//     },
+//     {
+//       id: 6,
+//       name: 'Ремни',
+//       Image: 'images/imgBELT/belt111.jpg',
+//       price: '4990'
+//     },
+//     {
+//         id: 6,
+//         name: 'Обложка на паспорт',
+//         Image: 'images/pasport/1.JPG',
+//         price: '3490'
+//       },
+//       {
+//         id: 6,
+//         name: 'Папка для документов',
+//         Image: 'images/papca/1.JPG',
+//         price: '4500'
+//       },
+//       {
+//         id: 6,
+//         name: 'Обложка для блокнота',
+//         Image: 'images/blocknot/7m4aVJneLso.jpg',
+//         price: '4500'
+//       },
+//       {
+//         id: 6,
+//         name: 'Бювар',
+//         Image: 'images/buvar/buvar111.jpg',
+//         price: '9900'
+//       },
+//   ];

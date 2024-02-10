@@ -7,19 +7,6 @@ const closeShoping = document.querySelector('.close-modal');
 const body = document.querySelector('body');
 let price = 0; 
 
-const order = document.querySelector('.primary-button-cor');
-
-const primaryButtonCor  = {
-    customerName: 'Тут имя',
-    customerContact: 'Тут номер телефона или телеграмм',
-    items: [
-        {
-            name: '',
-            price: ''
-        }
-    ]
-};
-
 
 //СВИЗАТЬ АЙДИ С КАРЗИНОЙ И С ТОВАРОМ С КАЖДЫМ
 const randomId = () => {
@@ -34,35 +21,25 @@ const normalPrice = (str) => {
     return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 };
 //  СУММА +
-const plusFullPrice = (currentPrice) => {
-    return price += currentPrice;
-};
-// СУММА - 
-const minusFullPrice = (currentPrice) => {
-    return price -= currentPrice;
-};
+const incrementQuantity = () => {
+    const currentQuantity = +cartQuantity.textContent;
+    cartQuantity.innerHTML = currentQuantity + 1;
+}; 
+//  СУММА -
+const decrementQuantity = () => {
+    const currentQuantity = -cartQuantity.textContent;
+    cartQuantity.innerHTML = currentQuantity - 1;
+}; 
 
 const printFullPrice = () => {
     fullPrice.textContent = `${normalPrice(price)} ₽`;
 };
 
-
-  const printQuantity = () => {
-    let length = cartProductsList.querySelector('.simplebar-content').children.length;
-    cartQuantity.textContent = length;
-    // length > 0 ? corsinaHeader.classList.add('mini') : corsinaHeader.classList.remove('active');
-    // printQuantity();
-};
-
 const deleteProducts = (productParent) => {
-    let id = productParent.querySelectorAll('.item').id="${id}";
-    document.querySelector(`.flexwrap[data-id="${id}"]`);
-    document.querySelector('.add-to-cart').disabled = false;  // get the id
-    let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
-    minusFullPrice(currentPrice);
-    printFullPrice(currentPrice);
+    let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));  
+    printFullPrice();
     productParent.remove();
-    printQuantity();
+    decrementQuantity(currentPrice);   
 }; 
 
 const generateItem = (img, title, white, id) => {
@@ -98,14 +75,14 @@ productBtn.forEach(el => {
         let img = parent.querySelector('.big-image img').getAttribute('src');
         let title = parent.querySelector('.title-text').textContent;
         let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.current').textContent));
-        plusFullPrice(priceNumber);
-        printFullPrice(); 
-        // minusFullPrice(priceNumber);
+        incrementQuantity(priceNumber); 
+        printFullPrice(priceNumber); 
         cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
-        printQuantity();
         self.disabled = true;
     });
 });
+
+
 
 cartProductsList.addEventListener('click', (e) => {
     if (e.target.classList.contains('bi-x')) {
@@ -113,11 +90,31 @@ cartProductsList.addEventListener('click', (e) => {
     }
 });
 
-// товар number
-// document.addEventListener('click', function (e) {
-//     if (e.target.classList.contains("increase")) {
-//       ++e.target.parentElement.querySelector("input").value;
-//     } else if (e.target.classList.contains("decrease")) {
-//       --e.target.parentElement.querySelector("input").value;
-//     }
-//   });
+
+
+// let products = [
+//     {
+//       id: '1',
+//       name: 'Трвел',
+//       Image: 'images/travel/1.1.JPG',
+//       price: '8990'
+//      },
+//     {
+//       id: 2,
+//       name: 'Клатч',
+//       Image: 'images/klath/klath1.2.JPG',
+//       price: '11 990'
+//     },
+//     {
+//       id: 3,
+//       name: 'Картхолдеры',
+//       Image: 'images/imageSMALL/Small4.1.JPG',
+//       price: '2500'
+//     },
+//     {
+//       id: 4,
+//       name: 'Классический кошелек',
+//       Image: 'images/imageSMALL/small114.jpg',
+//       price: '6 490'
+//     },
+// ]
