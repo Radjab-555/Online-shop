@@ -3,8 +3,6 @@ const cartProductsList = document.querySelector('.mini');
 const cartQuantity = document.querySelector('.cart__num');  
 const fullPrice = document.querySelector('.fullprice'); 
 const corsinaHeader = document.querySelector('.corsina-header'); 
-const closeShoping = document.querySelector('.close-modal');
-const body = document.querySelector('body');
 let price = 0; 
 
 
@@ -44,7 +42,6 @@ const deleteProducts = (productParent) => {
 
 const generateItem = (img, title, white, id) => {
     return `
-
     <li class="item">
     <div class="cart-content__product cart-product" id="${id}">
       <div class="thumbnainl object-cover">

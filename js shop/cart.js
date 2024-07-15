@@ -39,7 +39,7 @@ const decrementQuantity = () => {
 
 const deleteProducts = (productParent) => {
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
-    printFullPrice();
+    printFullPrice(currentPrice);
     productParent.remove();
     decrementQuantity(currentPrice);
 };    
@@ -76,7 +76,7 @@ productBtn.forEach(el => {
         let title = parent.querySelector('.item-text').textContent;
         let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.price').textContent));
        
-        printFullPrice();
+        printFullPrice(priceNumber);
         cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
         incrementQuantity(priceNumber);
         self.disabled = true;
