@@ -30,7 +30,7 @@ const incrementQuantity = () => {
     const currentQuantity = +cartQuantity.textContent;
     cartQuantity.innerHTML = currentQuantity + 1;
 }; 
-//  СУММА -
+//  СУММА - 
 const decrementQuantity = () => {
     const currentQuantity = -cartQuantity.textContent;
     cartQuantity.innerHTML = currentQuantity - 1;

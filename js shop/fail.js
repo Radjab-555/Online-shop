@@ -35,7 +35,7 @@ const printFullPrice = () => {
 
 const deleteProducts = (productParent) => {
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));  
-    printFullPrice();
+    printFullPrice(currentPrice);
     productParent.remove();
     decrementQuantity(currentPrice);   
 }; 
@@ -73,7 +73,7 @@ productBtn.forEach(el => {
         let title = parent.querySelector('.title-text').textContent;
         let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.current').textContent));
         incrementQuantity(priceNumber); 
-        printFullPrice(priceNumber); 
+        printFullPrice(priceNumber);
         cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
         self.disabled = true;
     });

@@ -40,6 +40,9 @@ a {
     --webkit-tap-highlight-color: transparent;
     color: #fff;
 }
+li {
+    list-style: none;
+}
 body {
     margin: 0;
     overflow-anchor: none;
