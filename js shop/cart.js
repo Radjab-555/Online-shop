@@ -22,26 +22,31 @@ const normalPrice = (str) => {
 };
 
 const printFullPrice = () => {
-    fullPrice.textContent = `${normalPrice(price)} ₽`;
+    fullPrice.textContent =`${normalPrice(price)} ₽`;
 };
+console.log(printFullPrice);
 
 //  СУММА +
 const incrementQuantity = () => {
-    const currentQuantity = +cartQuantity.textContent;
-    cartQuantity.innerHTML = currentQuantity + 1;
+    const quantity = Number(cartQuantity.textContent);
+    cartQuantity.innerHTML = quantity + 1;
 }; 
 //  СУММА - 
 const decrementQuantity = () => {
-    const currentQuantity = -cartQuantity.textContent;
-    cartQuantity.innerHTML = currentQuantity - 1;
+  const quantity = cartQuantity.textContent - 1;  
+  cartQuantity.innerHTML = quantity;
 }; 
 
 
 const deleteProducts = (productParent) => {
-    let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));
-    printFullPrice(currentPrice);
-    productParent.remove();
+    let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.price').textContent));
+    
+    // printFullPrice(currentPrice);
+    // incrementQuantity(currentPrice);
     decrementQuantity(currentPrice);
+    price -= currentPrice;
+    productParent.remove(currentPrice);
+    
 };    
 
 const generateItem = (img, title, white, id) => {
@@ -74,81 +79,86 @@ productBtn.forEach(el => {
         let id = e.target.id; 
         let img = parent.querySelector('.img-fluid').getAttribute('src');
         let title = parent.querySelector('.item-text').textContent;
-        let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.price').textContent));
-       
+        let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.price').textContent));  
+
+        console.log(priceNumber);
         printFullPrice(priceNumber);
-        cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
         incrementQuantity(priceNumber);
+        
         self.disabled = true;
+        cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
+
+        console.log(price);
     });
 });
 
 cartProductsList.addEventListener('click', (e) => {
+  console.log(e.target);
     if (e.target.classList.contains('bi-x')) {
         deleteProducts(e.target.closest('.item'));
     }
 });
 
 
-// let products = [
-//     {
-//       id: '1',
-//       name: 'Трвел',
-//       Image: 'images/travel/1.1.JPG',
-//       price: '8990'
-//      },
-//     {
-//       id: 2,
-//       name: 'Клатч',
-//       Image: 'images/klath/klath1.2.JPG',
-//       price: '11 990'
-//     },
-//     {
-//       id: 3,
-//       name: 'Картхолдеры',
-//       Image: 'images/imageSMALL/Small4.1.JPG',
-//       price: '2500'
-//     },
-//     {
-//       id: 4,
-//       name: 'Классический кошелек',
-//       Image: 'images/imageSMALL/small114.jpg',
-//       price: '6 490'
-//     },
-//     {
-//       id: 5,
-//       name: 'Бифолд с монетницей',
-//       Image: 'images/manetnica/111.jpg',
-//       price: '5 500'
-//     },
-//     {
-//       id: 6,
-//       name: 'Ремни',
-//       Image: 'images/imgBELT/belt111.jpg',
-//       price: '4990'
-//     },
-//     {
-//         id: 6,
-//         name: 'Обложка на паспорт',
-//         Image: 'images/pasport/1.JPG',
-//         price: '3490'
-//       },
-//       {
-//         id: 6,
-//         name: 'Папка для документов',
-//         Image: 'images/papca/1.JPG',
-//         price: '4500'
-//       },
-//       {
-//         id: 6,
-//         name: 'Обложка для блокнота',
-//         Image: 'images/blocknot/7m4aVJneLso.jpg',
-//         price: '4500'
-//       },
-//       {
-//         id: 6,
-//         name: 'Бювар',
-//         Image: 'images/buvar/buvar111.jpg',
-//         price: '9900'
-//       },
-//   ];
+let products = [
+    {
+      id: '1',
+      name: 'Трвел',
+      Image: 'images/travel/1.1.JPG',
+      price: '8990'
+     },
+    {
+      id: 2,
+      name: 'Клатч',
+      Image: 'images/klath/klath1.2.JPG',
+      price: '11 990'
+    },
+    {
+      id: 3,
+      name: 'Картхолдеры',
+      Image: 'images/imageSMALL/Small4.1.JPG',
+      price: '2500'
+    },
+    {
+      id: 4,
+      name: 'Классический кошелек',
+      Image: 'images/imageSMALL/small114.jpg',
+      price: '6 490'
+    },
+    {
+      id: 5,
+      name: 'Бифолд с монетницей',
+      Image: 'images/manetnica/111.jpg',
+      price: '5 500'
+    },
+    {
+      id: 6,
+      name: 'Ремни',
+      Image: 'images/imgBELT/belt111.jpg',
+      price: '4990'
+    },
+    {
+        id: 6,
+        name: 'Обложка на паспорт',
+        Image: 'images/pasport/1.JPG',
+        price: '3490'
+      },
+      {
+        id: 6,
+        name: 'Папка для документов',
+        Image: 'images/papca/1.JPG',
+        price: '4500'
+      },
+      {
+        id: 6,
+        name: 'Обложка для блокнота',
+        Image: 'images/blocknot/7m4aVJneLso.jpg',
+        price: '4500'
+      },
+      {
+        id: 6,
+        name: 'Бювар',
+        Image: 'images/buvar/buvar111.jpg',
+        price: '9900'
+      },
+  ];
