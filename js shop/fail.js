@@ -20,7 +20,7 @@ const normalPrice = (str) => {
 };
 //  СУММА +
 const incrementQuantity = () => {
-    const currentQuantity = +cartQuantity.textContent;
+    const currentQuantity = Number(cartQuantity.textContent);
     cartQuantity.innerHTML = currentQuantity + 1;
 }; 
 //  СУММА -
@@ -29,15 +29,16 @@ const decrementQuantity = () => {
     cartQuantity.innerHTML = currentQuantity - 1;
 }; 
 
-const printFullPrice = () => {
+const printFullPrice = (price) => {
     fullPrice.textContent = `${normalPrice(price)} ₽`;
 };
 
 const deleteProducts = (productParent) => {
     let currentPrice = parseInt(priceWithoutSpaces(productParent.querySelector('.white').textContent));  
-    printFullPrice(currentPrice);
-    productParent.remove();
-    decrementQuantity(currentPrice);   
+    price -= currentPrice;
+    decrementQuantity(currentPrice); 
+    printFullPrice(price);
+    productParent.remove(currentPrice);
 }; 
 
 const generateItem = (img, title, white, id) => {
@@ -72,10 +73,11 @@ productBtn.forEach(el => {
         let img = parent.querySelector('.big-image img').getAttribute('src');
         let title = parent.querySelector('.title-text').textContent;
         let priceNumber = parseInt(priceWithoutSpaces(parent.querySelector('.current').textContent));
+        price += priceNumber
+        printFullPrice(price);
         incrementQuantity(priceNumber); 
-        printFullPrice(priceNumber);
-        cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
         self.disabled = true;
+        cartProductsList.insertAdjacentHTML('beforeend', generateItem(img, title, priceNumber, id));
     });
 });
 
