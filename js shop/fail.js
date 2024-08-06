@@ -25,7 +25,7 @@ const incrementQuantity = () => {
 }; 
 //  СУММА -
 const decrementQuantity = () => {
-    const currentQuantity = -cartQuantity.textContent;
+    const currentQuantity = cartQuantity.textContent;
     cartQuantity.innerHTML = currentQuantity - 1;
 }; 
 
@@ -91,29 +91,29 @@ cartProductsList.addEventListener('click', (e) => {
 
 
 
-// let products = [
-//     {
-//       id: '1',
-//       name: 'Трвел',
-//       Image: 'images/travel/1.1.JPG',
-//       price: '8990'
-//      },
-//     {
-//       id: 2,
-//       name: 'Клатч',
-//       Image: 'images/klath/klath1.2.JPG',
-//       price: '11 990'
-//     },
-//     {
-//       id: 3,
-//       name: 'Картхолдеры',
-//       Image: 'images/imageSMALL/Small4.1.JPG',
-//       price: '2500'
-//     },
-//     {
-//       id: 4,
-//       name: 'Классический кошелек',
-//       Image: 'images/imageSMALL/small114.jpg',
-//       price: '6 490'
-//     },
-// ]
+let products = [
+    {
+      id: '1',
+      name: 'Трвел',
+      Image: 'images/travel/1.1.JPG',
+      price: '8990'
+     },
+    {
+      id: 2,
+      name: 'Клатч',
+      Image: 'images/klath/klath1.2.JPG',
+      price: '11 990'
+    },
+    {
+      id: 3,
+      name: 'Картхолдеры',
+      Image: 'images/imageSMALL/Small4.1.JPG',
+      price: '2500'
+    },
+    {
+      id: 4,
+      name: 'Классический кошелек',
+      Image: 'images/imageSMALL/small114.jpg',
+      price: '6 490'
+    },
+];
