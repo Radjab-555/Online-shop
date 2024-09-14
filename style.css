@@ -339,7 +339,7 @@ nav .fly-item,
     line-height: 1;
 }
 
-/*  ВНУТРИ В РАРЗИНЕ */
+/*  ВНУТРИ В КАРЗИНЕ */
 .mini-cart .subtotal {
     display: flex;
     flex-direction: column;
@@ -473,12 +473,6 @@ b, strong {
     left: 0;
     bottom: 0;
 }
-/* .simplebar-vertical {
-    visibility: initial;
-} */
-
-
-
                                    /* ШАПКА САЙТА */
 #hero {
     max-width: 100%;
@@ -1033,24 +1027,24 @@ form :where(input,textarea)  {
 }
 .bi_email {
     color: aliceblue;
+    height: 30px;
+    width: 50px;
 }
-.bi_email:hover {
-    color: #36456b;
-}
-.bi_instagram {
+.bi_instagramm {
     color: #e2e7ef;
-}
-.bi_instagram:hover {
-    color: rgb(210, 46, 46);
+    width: 50px;
+    height: 30px;
 }
 .bi_watscap {
     color: #e2e7ef;
+    width: 50px;
+    height: 30px;
 }
-.bi_watscap:hover {
-    color: #3d6bde;
+.bi_vk {
+    color: #e2e7ef;
+    width:50px;
+    height:35px;
 }
-
-
 
 
 
