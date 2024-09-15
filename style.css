@@ -1091,6 +1091,11 @@ form :where(input,textarea)  {
         margin:  0 0em 1em 0em;
         max-width: 200px;
     }
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
@@ -1119,6 +1124,11 @@ form :where(input,textarea)  {
     }
     body {
         font-family:  Arial, Helvetica, sans-serif
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -1153,6 +1163,11 @@ form :where(input,textarea)  {
     }
     body {
         font-family:  Arial, Helvetica, sans-serif
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 /* and (max-width: 990px) */
