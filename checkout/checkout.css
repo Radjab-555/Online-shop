@@ -6,7 +6,7 @@
     outline: none;
     border: none;
     text-transform: capitalize;
-    transition: all .2s linear;
+    transition: all .2s linear ;
 }
 .container {
     display: flex;
@@ -17,60 +17,38 @@
     background: linear-gradient(90deg, #2e5840 20%, #0e7639 40.1%);
     padding-bottom: 70px;
 }
-.container form {
-    padding: 20px;
-    width: 700px;
-    background: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
-}
-.container form .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-.container form .row .col {
-    display: 1 1 250px;
-}
-.container form .row .col .title {
-    color: #333;
-    font-size: 20px;
-    padding-bottom: 5px;
-    text-transform: uppercase;
-}
-.container form .row .col .inputBox {
-    margin: 15px 0;
 
+.container form {
+    display: flex;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    height: auto;
+    background: #f1f1f1;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    justify-content: space-around;
 }
-.container form .row .col .inputBox span {
-    margin-bottom: 10px;
+.row {
     display: block;
 }
-.container form .row .col .inputBox input {
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: 10px 15px;
+input {
+    display: block;
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid #acacac;
+    margin-bottom: 10px;
+}
+input,::placeholder {
+    padding-left: 5px;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    background: linear-gradient(90deg, #2e5840 20%, #0e7639 40.1%);
     font-size: 15px;
-    text-transform: none;
 }
-.container form .row .col .inputBox:focus {
-    border: 1px solid #000;
-}
-.container form .row .col .flex{
-    display: flex;
-    gap: 15px;
-}
-.container form .row .col .flex .inputBox {
-    margin-top: 5px;
-}
-.container form .submit-btn {
-    width: 100%;
-    padding: 12px;
-    font-size: 17px;
-    background: #27ae60;
-    color:#fff;
-    margin-top: 5px;
-    cursor: pointer;
-}
-.container form .submit-btn:hover {
-    background: #2ecc71;
-}
+.submit-btn:hover {
+    background: linear-gradient(90deg, #0e7639 20.1%, #2e5840 40%);
+    color: #f1f1f1;
+} 

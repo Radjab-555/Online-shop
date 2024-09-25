@@ -29,6 +29,9 @@
 *,::before,::after {
     box-sizing: border-box;
 }
+html {
+    scroll-behavior:unset;
+}
 * {
     max-width: 100%;
     box-sizing: border-box;

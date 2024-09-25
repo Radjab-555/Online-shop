@@ -12,78 +12,26 @@
         <form action="">
             <div class="row">
                 <div class="col">
-                    <!-- <h3 class="title">платежный адрес</h3> -->
                     <div class="inputBox">
                         <span>ФИО :</span>
-                        <input type="text" placeholder="Иванов иван иванович">
-                    </div>
-
-                
-<!-- 
-                    <div class="inputBox">
-                        <span>адресс :</span>
-                        <input type="text" placeholder="Москва ул гагарина 3">
-                    </div>
-
-                    <div class="inputBox">
-                        <span>Город:</span>
-                        <input type="text" placeholder="Город">
-                    </div>
-
-                    
-                    <div class="inputBox">
-                        <span>email :</span>
-                        <input type="email" placeholder="ivanovskii@mail.com">
-                    </div> -->
-
-                    <!-- <div class="flex">
-                        <div class="inputBox">
-                            <span>state :</span>
-                            <input type="text" placeholder="russia">
-                        </div>
-                        <div class="inputBox">
-                            <span>zip code :</span>
-                            <input type="text" placeholder="1234">
-                        </div>
-                    </div> -->
+                        <input type="text" required placeholder="Иванов Иван Иванович">
+                    </div> 
                 </div>
-
                 <div class="col">
-
                     <div class="inputBox">
                         <span>Номер:</span>
-                        <input type="text" placeholder="+7 928-777-77-55">
+                        <input type="text" required placeholder="+7 928-777-77-55">
                     </div>
-
-                    <!-- <h3 class="title">ОПЛАТА</h3>
-                    <div class="inputBox">
-                        <span>ИФ карты :</span>
-                        <input type="text" placeholder="IVAN IVANOV ">
-                    </div>
-
-                    <div class="inputBox">
-                        <span>Номер карты :</span>
-                        <input type="email" placeholder="1111-2222-3333-4444">
-                    </div>
-
-                    <div class="inputBox">
-                        <span>Срок... :</span>
-                        <input type="text" placeholder="20/30">
-                    </div>
-
-                    <div class="flex">
-                        <div class="inputBox">
-                            <span>CVV :</span>
-                            <input type="text" placeholder="123">
-                        </div>
-                    </div>
-                </div> -->
+                </div>
+                <div class="subtotal">
+                    <p class="textp">Итоги</p>
+                    <span class="fullprice" <strong>0 ₽</strong></span>
+                    <input type="submit" value="Отправить" class="submit-btn">
+                </div>  
             </div>
-
-                                    
-
-            <input type="submit" value="Отправить" class="submit-btn">
         </form>
     </div>
+    <script src="../checkout/checkout.js"></script>
 </body>
+
 </html>
